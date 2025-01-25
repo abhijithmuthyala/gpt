@@ -1,6 +1,5 @@
+import ChatLinks from "./components/chat-links/ChatLinks";
 import "./globals.css";
-
-import "@/gemini/init";
 
 export default function RootLayout({
   children,
@@ -9,7 +8,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body className="min-h-screen grid grid-cols-[12rem,1fr]">
+        <div className="bg-gray-100 sticky top-0 h-screen overflow-y-auto">
+          <ChatLinks />
+        </div>
+        {children}
+      </body>
     </html>
   );
 }
