@@ -1,8 +1,8 @@
-import { createBrowserClient } from '@supabase/ssr'
+import { createBrowserClient } from "@supabase/ssr";
 
 export function createClient() {
   return createBrowserClient(
     process.env.SUPABASE_URL!,
-    process.env.SUPABASE_API_KEY!
-  )
+    process.env.SUPABASE_API_KEY!,
+  );
 }

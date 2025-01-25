@@ -1,19 +1,9 @@
-import { createClient } from "@/supabase/server";
-import { notFound } from "next/navigation";
+import NewChat from "./components/NewChat";
 
-export default async function Page() {
-  const { auth } = await createClient();
-  const { data, error } = await auth.getUser();
-
-  if (error) {
-    return notFound();
-  }
-
-  const userName = (data.user.email as string).split("@")[0];
-
+export default function HomePage() {
   return (
-    <div>
-      <h1>Hello, {userName}!</h1>
-    </div>
+    <main className="bg-gray-50 grid place-content-center">
+      <NewChat />
+    </main>
   );
 }
