@@ -1,7 +1,9 @@
 "use client";
 
 import { ChatMessage, Role } from "@/app/types";
-import { useState } from "react";
+import { updateChatSession } from "@/gemini/init";
+import { formatHistory } from "@/utils";
+import { useLayoutEffect, useState } from "react";
 import Markdown from "react-markdown";
 import PromptForm from "../PromptForm";
 
@@ -14,6 +16,13 @@ export default function ChatInterface({
 }) {
   const [chats, setChats] = useState(history);
 
+  useLayoutEffect(
+    function syncChatSession() {
+      updateChatSession({ history: formatHistory(history) });
+    },
+    [id, history],
+  );
+
   function handlePrompt(prompt: string, role: Role) {
     setChats(function reduceChats(chats) {
       return [...chats, { message: prompt, role, chat_id: id }];
@@ -23,7 +32,7 @@ export default function ChatInterface({
   return (
     <div className="flex flex-col justify-end gap-y-16 px-2 py-4">
       <Chats chats={chats} />
-      <PromptForm onPrompt={handlePrompt} />
+      <PromptForm onPrompt={handlePrompt} history={chats} />
     </div>
   );
 }

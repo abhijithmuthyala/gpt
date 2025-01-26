@@ -3,12 +3,14 @@
 import { useParams } from "next/navigation";
 import { useActionState, useRef } from "react";
 import { sendQuery } from "../actions/chat";
-import { PromptState, Role } from "../types";
+import { ChatMessage, PromptState, Role } from "../types";
 
 export default function PromptForm({
   onPrompt,
+  history,
 }: {
   onPrompt: (prompt: string, role: Role) => void;
+  history: ChatMessage[];
 }) {
   const params = useParams();
   const [formState, queryAction, queryIsPending] = useActionState(
@@ -30,10 +32,11 @@ export default function PromptForm({
     const { response, error } = await sendQuery(
       formData,
       params.chatId as string,
+      history,
     );
     if (!error) {
       queueMicrotask(function updatePrompts() {
-        onPrompt(response as string, "assistant");
+        onPrompt(response as string, "model");
       });
     }
     return { response, error };
