@@ -15,13 +15,13 @@ export default function PromptForm({
   const params = useParams();
   const [formState, queryAction, queryIsPending] = useActionState(
     handlePromptAction,
-    null,
+    null
   );
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handlePromptAction(
     formState: PromptState,
-    formData: FormData,
+    formData: FormData
   ) {
     formRef.current?.reset();
 
@@ -32,7 +32,7 @@ export default function PromptForm({
     const { response, error } = await sendQuery(
       formData,
       params.chatId as string,
-      history,
+      history
     );
     if (!error) {
       queueMicrotask(function updatePrompts() {
