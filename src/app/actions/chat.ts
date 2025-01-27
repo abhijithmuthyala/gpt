@@ -1,18 +1,25 @@
 "use server";
 
-import { model } from "@/gemini/init";
+import { startChatSession } from "@/gemini/init";
+import { formatHistory } from "@/utils";
 import { GoogleGenerativeAIFetchError } from "@google/generative-ai";
+import { ChatMessage } from "../types";
 import { saveMessage } from "./supabase";
 
-export async function sendQuery(data: FormData, chatId: string) {
+export async function sendQuery(
+  data: FormData,
+  chatId: string,
+  history: ChatMessage[],
+) {
   try {
     const prompt = data.get("prompt") as string;
+    const chatSession = startChatSession({ history: formatHistory(history) });
     const [result] = await Promise.all([
-      model.generateContent(prompt),
+      chatSession.sendMessage(prompt),
       saveMessage(prompt, "user", chatId),
     ]);
     const response = result.response.text();
-    await saveMessage(response, "assistant", chatId);
+    await saveMessage(response, "model", chatId);
     return { error: null, response };
   } catch (error) {
     if (error instanceof GoogleGenerativeAIFetchError) {

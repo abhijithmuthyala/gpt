@@ -7,18 +7,17 @@ export default function NewChat() {
   const chatId = uuid();
   const router = useRouter();
 
-  async function createNewChat(e: React.MouseEvent<HTMLAnchorElement>) {
+  async function createNewChat(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
     router.push(`/${chatId}`);
   }
 
   return (
-    <a
-      // href={`/${chatId}`}
+    <button
       onClick={createNewChat}
       className="px-3 py-2 rounded-md bg-lime-500 text-white"
     >
       Start a new chat
-    </a>
+    </button>
   );
 }
