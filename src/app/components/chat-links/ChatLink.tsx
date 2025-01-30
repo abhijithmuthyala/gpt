@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import ChatLinkActions from "./ChatLinkActions";
 
 export default function ChatLink({
   id,
@@ -14,13 +15,18 @@ export default function ChatLink({
   const isCurrentChat = id === params.chatId;
 
   return (
-    <Link
-      href={`/${id}`}
-      className={`flex items-center gap-2 p-2 rounded-md hover:bg-gray-200 ${
-        isCurrentChat ? "bg-gray-200" : ""
-      }`}
-    >
-      {children}
-    </Link>
+    <div className="relative">
+      <Link
+        href={`/${id}`}
+        className={`p-2 grid grid-cols-[75%] hover:bg-gray-200 rounded-md ${
+          isCurrentChat ? "bg-gray-200" : ""
+        }`}
+      >
+        {children}
+      </Link>
+      <div className="absolute right-6 top-1/2 -translate-y-1/2 ">
+        <ChatLinkActions id={id} />
+      </div>
+    </div>
   );
 }

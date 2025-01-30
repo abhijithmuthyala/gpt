@@ -48,3 +48,14 @@ export async function saveMessage(message: string, role: Role, chatId: string) {
     throw new Error(error as string);
   }
 }
+
+export async function deleteChat(chatId: string) {
+  const supabase = await createClient();
+  const { error } = await supabase.rpc("delete_chat", { p_chat_id: chatId });
+
+  if (error) {
+    return { error };
+  }
+
+  return { error: null };
+}
