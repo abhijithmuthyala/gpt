@@ -1,4 +1,5 @@
 import { Content } from "@google/generative-ai";
+import React from "react";
 import { ChatMessage } from "./app/types";
 
 export function formatHistory(history: ChatMessage[]) {
@@ -7,4 +8,9 @@ export function formatHistory(history: ChatMessage[]) {
     chatHistory.push({ role: chat.role, parts: [{ text: chat.message }] });
   }
   return chatHistory;
+}
+
+export function stopPropagation(event: React.MouseEvent) {
+  event.preventDefault();
+  event.stopPropagation();
 }

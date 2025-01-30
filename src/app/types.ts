@@ -1,3 +1,5 @@
+import React from "react";
+
 export type Role = "user" | "model";
 
 export interface ChatMessage {
@@ -17,3 +19,5 @@ export type PromptState = {
   error: string | null;
   response: string | null;
 } | null;
+
+export type ButtonClickEvent = React.MouseEvent<HTMLButtonElement>;
