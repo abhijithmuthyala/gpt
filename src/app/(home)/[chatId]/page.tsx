@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-import { fetchChatHistory } from "../actions/supabase";
-import ChatInterface from "../components/chat-interface/ChatInterface";
+import { fetchChatHistory } from "../../actions/supabase";
+import ChatInterface from "../../components/chat-interface/ChatInterface";
 
 export default async function ChatPage({
   params,
