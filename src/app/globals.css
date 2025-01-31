@@ -21,6 +21,11 @@
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
   }
+
+  ::view-transition-old(root),
+  ::view-transition-new(root) {
+    animation-duration: 400ms;
+  }
 }
 
 nextjs-portal {

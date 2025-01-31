@@ -2,7 +2,7 @@
 
 import { ChatMessage, Role } from "@/app/types";
 import { updateChatSession } from "@/gemini/init";
-import { formatHistory } from "@/utils";
+import { formatHistory } from "@/utils/shared";
 import { useLayoutEffect, useState } from "react";
 import Markdown from "react-markdown";
 import PromptForm from "../PromptForm";

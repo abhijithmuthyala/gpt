@@ -1,5 +1,6 @@
 "use client";
 
+import { setStateInViewTransition } from "@/utils/client";
 import React, { useState } from "react";
 
 type AccordianProps = {
@@ -12,7 +13,9 @@ export default function Accordian({ title, details, toggle }: AccordianProps) {
   const [expanded, setExpanded] = useState(false);
 
   function toggleAccordian() {
-    setExpanded((e) => !e);
+    setStateInViewTransition(function transitionAccordian() {
+      setExpanded((e) => !e);
+    });
   }
 
   return (
@@ -23,7 +26,7 @@ export default function Accordian({ title, details, toggle }: AccordianProps) {
         <p className="col-span-2 col-start-1 row-start-1 grid">{title}</p>
         <button
           onClick={toggleAccordian}
-          className="min-w-8 aspect-square col-start-2 row-start-1 bg-amber-500 rounded-md"
+          className="min-w-8 aspect-square col-start-2 row-start-1 bg-emerald-200 rounded-md"
         >
           {toggle}
         </button>
