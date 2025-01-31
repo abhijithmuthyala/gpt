@@ -1,7 +1,7 @@
 "use server";
 
 import { startChatSession } from "@/gemini/init";
-import { formatHistory } from "@/utils";
+import { formatHistory } from "@/utils/shared";
 import { GoogleGenerativeAIFetchError } from "@google/generative-ai";
 import { ChatMessage } from "../types";
 import { saveMessage } from "./supabase";

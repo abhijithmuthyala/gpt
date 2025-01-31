@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useParams } from "next/navigation";
+import Accordian from "../Accordian";
 import ChatLinkActions from "./ChatLinkActions";
 
 export default function ChatLink({
@@ -15,18 +16,18 @@ export default function ChatLink({
   const isCurrentChat = id === params.chatId;
 
   return (
-    <div className="relative">
-      <Link
-        href={`/${id}`}
-        className={`p-2 grid grid-cols-[75%] hover:bg-gray-200 rounded-md ${
-          isCurrentChat ? "bg-gray-200" : ""
-        }`}
-      >
-        {children}
-      </Link>
-      <div className="absolute right-6 top-1/2 -translate-y-1/2 ">
-        <ChatLinkActions id={id} />
-      </div>
+    <div
+      className={`hover:bg-amber-100 p-2 rounded-md ${isCurrentChat ? "bg-gray-200" : ""}`}
+    >
+      <Accordian
+        title={
+          <Link href={`/${id}`} className="pr-10">
+            {children}
+          </Link>
+        }
+        details={<ChatLinkActions id={id} />}
+        toggle={<span>+</span>}
+      />
     </div>
   );
 }

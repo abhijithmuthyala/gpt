@@ -1,4 +1,6 @@
 import ChatLinks from "./components/chat-links/ChatLinks";
+import Header from "./components/Header";
+import Sidebar from "./components/Sidebar";
 import "./globals.css";
 
 export default function RootLayout({
@@ -7,12 +9,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className="min-h-screen grid grid-cols-[12rem_1fr]">
-        <div className="bg-gray-100 sticky top-0 h-screen overflow-y-auto overflow-x-hidden">
-          <ChatLinks />
+    <html lang="en" className="overflow-x-hidden">
+      <body className="flex flex-col min-h-screen">
+        <Header />
+        <div className="grid sm:grid-cols-[12rem_1fr] grow">
+          <Sidebar>
+            <ChatLinks />
+          </Sidebar>
+          {children}
         </div>
-        {children}
       </body>
     </html>
   );
