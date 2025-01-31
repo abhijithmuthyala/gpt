@@ -18,12 +18,12 @@ export default function Accordian({ title, details, toggle }: AccordianProps) {
   return (
     <>
       <div
-        className={`flex justify-between gap-6 items-center ${expanded ? "mb-3" : ""}`}
+        className={`grid grid-cols-[1fr_2rem] gap-x-6 items-center ${expanded ? "mb-3" : ""}`}
       >
-        <p className="grid">{title}</p>
+        <p className="col-span-2 col-start-1 row-start-1 grid">{title}</p>
         <button
           onClick={toggleAccordian}
-          className="min-w-8 aspect-square bg-amber-500 rounded-md"
+          className="min-w-8 aspect-square col-start-2 row-start-1 bg-amber-500 rounded-md"
         >
           {toggle}
         </button>

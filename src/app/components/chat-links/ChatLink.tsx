@@ -20,7 +20,11 @@ export default function ChatLink({
       className={`hover:bg-amber-100 p-2 rounded-md ${isCurrentChat ? "bg-gray-200" : ""}`}
     >
       <Accordian
-        title={<Link href={`/${id}`}>{children}</Link>}
+        title={
+          <Link href={`/${id}`} className="pr-10">
+            {children}
+          </Link>
+        }
         details={<ChatLinkActions id={id} />}
         toggle={<span>+</span>}
       />
