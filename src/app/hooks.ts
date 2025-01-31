@@ -20,3 +20,17 @@ export function useClickOutside<T extends HTMLElement | null>(
     [memoisedCallback, childRef],
   );
 }
+
+export function useDocumentOverflowEffect(overlayState: boolean) {
+  useEffect(
+    function () {
+      if (!overlayState) return;
+      document.documentElement.style.overflowY = "hidden";
+
+      return function () {
+        document.documentElement.style.overflowY = "auto";
+      };
+    },
+    [overlayState],
+  );
+}
