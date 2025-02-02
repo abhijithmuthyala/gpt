@@ -46,8 +46,9 @@ export default function LoginPage() {
           <Typography variant="body2" color="text.secondary" sx={{ mb: 3 }}>
             Please sign in to your account or create a new one
           </Typography>
-
-          <Box component="form" width="100%" noValidate>
+          
+          {/* Add method="post" to the form */}
+          <Box component="form" method="post" width="100%" noValidate>
             <Stack spacing={2}>
               <TextField
                 required
@@ -70,8 +71,10 @@ export default function LoginPage() {
                 autoComplete="current-password"
                 variant="outlined"
               />
-
+              
+              {/* Add type="submit" to buttons */}
               <Button
+                type="submit"
                 fullWidth
                 variant="contained"
                 size="large"
@@ -82,6 +85,7 @@ export default function LoginPage() {
               </Button>
               
               <Button
+                type="submit"
                 fullWidth
                 variant="outlined"
                 size="large"
