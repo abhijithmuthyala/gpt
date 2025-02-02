@@ -3,12 +3,14 @@
 import { createClient } from "@/supabase/server";
 import { ChatMessage, Role } from "../types";
 
-export async function getUniqueChatIds(): Promise<string[] | null> {
+export async function getChatTitles(): Promise<
+  { id: string; chat_id: string; title: string }[] | null
+> {
   const supabase = await createClient();
-  const { data, error } = await supabase.rpc("get_unique_chat_ids");
+  const { data, error } = await supabase.rpc("get_chat_titles"); // Call the updated get_chat_titles RPC
 
   if (error) {
-    console.error("Error fetching unique chat IDs:", error);
+    console.error("Error fetching chat titles:", error);
     return null;
   }
 
