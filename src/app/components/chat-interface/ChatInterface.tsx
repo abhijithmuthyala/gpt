@@ -22,7 +22,7 @@ export default function ChatInterface({
     function syncChatSession() {
       updateChatSession({ history: formatHistory(history) });
     },
-    [id, history]
+    [id, history],
   );
 
   function handlePrompt(prompt: string, role: Role) {
