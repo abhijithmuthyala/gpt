@@ -7,6 +7,9 @@ import { useRouter } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
 import Markdown from "react-markdown";
 import PromptForm from "../PromptForm";
+import { Box, Paper, Container } from "@mui/material";
+import PersonIcon from '@mui/icons-material/Person';
+import SmartToyIcon from '@mui/icons-material/SmartToy';
 
 export default function ChatInterface({
   history,
@@ -35,31 +38,76 @@ export default function ChatInterface({
   }
 
   return (
-    <div className="flex flex-col justify-end gap-y-16 px-2 py-4">
-      <Chats chats={chats} />
-      <PromptForm onPrompt={handlePrompt} history={chats} />
-    </div>
+    <Container maxWidth="lg" sx={{ height: '100vh' }}>
+      <Box 
+        sx={{ 
+          display: 'flex', 
+          flexDirection: 'column', 
+          justifyContent: 'space-between',
+          height: '100%',
+          py: 4,
+          gap: 2
+        }}
+      >
+        <Chats chats={chats} />
+        <PromptForm onPrompt={handlePrompt} history={chats} />
+      </Box>
+    </Container>
   );
 }
 
 function Chats({ chats }: { chats: ChatMessage[] }) {
   return (
-    <ol className="flex flex-col gap-y-4">
+    <Box sx={{ 
+      display: 'flex', 
+      flexDirection: 'column', 
+      gap: 2,
+      overflowY: 'auto',
+      flexGrow: 1
+    }}>
       {chats.map((chat, index) => {
         const isUser = chat.role === "user";
         return (
-          <li
+          <Box
             key={chat.id ?? index}
-            className={`max-w-[75%] overflow-x-auto px-3 py-2 rounded-md ${isUser ? "self-end" : ""} ${
-              isUser ? "bg-zinc-300" : "bg-lime-100"
-            }`}
+            sx={{
+              display: 'flex',
+              justifyContent: isUser ? 'flex-end' : 'flex-start',
+              width: '100%'
+            }}
           >
-            <div>
-              <Markdown>{chat.message}</Markdown>
-            </div>
-          </li>
+            <Paper
+              elevation={1}
+              sx={{
+                maxWidth: '75%',
+                p: 2,
+                borderRadius: 2,
+                backgroundColor: isUser ? 'primary.light' : 'success.light',
+                display: 'flex',
+                gap: 1.5,
+                alignItems: 'flex-start'
+              }}
+            >
+              {/* Icon for the message sender */}
+              {isUser ? (
+                <PersonIcon color="primary" />
+              ) : (
+                <SmartToyIcon color="success" />
+              )}
+              
+              {/* Message content */}
+              <Box sx={{ 
+                '& > div': { 
+                  '& > p': { m: 0 },
+                  color: isUser ? 'primary.dark' : 'success.dark'
+                }
+              }}>
+                <Markdown>{chat.message}</Markdown>
+              </Box>
+            </Paper>
+          </Box>
         );
       })}
-    </ol>
+    </Box>
   );
 }

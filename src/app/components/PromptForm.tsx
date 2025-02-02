@@ -4,6 +4,8 @@ import { useParams } from "next/navigation";
 import { useActionState, useRef } from "react";
 import { sendQuery } from "../actions/chat";
 import { ChatMessage, PromptState, Role } from "../types";
+import { Box, TextField, Button, Alert } from "@mui/material";
+import SendIcon from '@mui/icons-material/Send';
 
 export default function PromptForm({
   onPrompt,
@@ -43,28 +45,67 @@ export default function PromptForm({
   }
 
   return (
-    <form
+    <Box
+      component="form"
       action={queryAction}
       ref={formRef}
-      className="sticky bottom-0 bg-slate-400 py-4 px-2"
+      sx={{
+        position: 'sticky',
+        bottom: 0,
+        bgcolor: 'background.paper',
+        p: 2,
+        borderTop: 1,
+        borderColor: 'divider',
+        display: 'flex',
+        flexDirection: 'column',
+        borderRadius:'20px',
+        border:'2px solid black',
+        gap: 1
+      }}
     >
-      <textarea
-        name="prompt"
-        id="prompt"
-        disabled={queryIsPending}
-        placeholder="Ask a question"
-        className="w-full p-2 rounded-md border border-gray-300 focus:outline-hidden focus:border-blue-500 max-h-32 min-h-16 overflow-y-auto resize-none"
-      ></textarea>
-      <button type="submit" disabled={queryIsPending}>
-        {queryIsPending ? "Loading..." : "Send"}
-      </button>
+      <Box sx={{ display: 'flex', gap: 1 }}>
+        <TextField
+          name="prompt"
+          id="prompt"
+          disabled={queryIsPending}
+          placeholder="Ask a question..."
+          multiline
+          maxRows={4}
+          fullWidth
+          variant="outlined"
+          size="medium"
+          sx={{
+            '& .MuiOutlinedInput-root': {
+              backgroundColor: 'background.paper',
+            }
+          }}
+        />
+        <Button
+          type="submit"
+          disabled={queryIsPending}
+          variant="contained"
+          color="primary"
+          sx={{ 
+            minWidth: '56px',
+            height: '56px',
+            borderRadius: '8px'
+          }}
+        >
+          <SendIcon />
+        </Button>
+      </Box>
+
       {formState?.error && !queryIsPending && (
         <FormError error={formState.error} />
       )}
-    </form>
+    </Box>
   );
 }
 
 function FormError({ error }: { error: string }) {
-  return <div className="text-red-500">{error}</div>;
+  return (
+    <Alert severity="error" sx={{ mt: 1 }}>
+      {error}
+    </Alert>
+  );
 }
