@@ -3,6 +3,7 @@
 import { startChatSession } from "@/gemini/init";
 import { formatHistory } from "@/utils/shared";
 import { GoogleGenerativeAIFetchError } from "@google/generative-ai";
+import { revalidatePath } from "next/cache";
 import { ChatMessage } from "../types";
 import { saveMessage } from "./supabase";
 
@@ -20,6 +21,8 @@ export async function sendQuery(
     ]);
     const response = result.response.text();
     await saveMessage(response, "model", chatId);
+
+    revalidatePath(`/${chatId}`);
     return { error: null, response };
   } catch (error) {
     if (error instanceof GoogleGenerativeAIFetchError) {
