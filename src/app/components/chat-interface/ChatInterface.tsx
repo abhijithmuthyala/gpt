@@ -3,6 +3,7 @@
 import { ChatMessage, Role } from "@/app/types";
 import { updateChatSession } from "@/gemini/init";
 import { formatHistory } from "@/utils/shared";
+import { useRouter } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
 import Markdown from "react-markdown";
 import PromptForm from "../PromptForm";
@@ -15,18 +16,22 @@ export default function ChatInterface({
   id: string;
 }) {
   const [chats, setChats] = useState(history);
+  const router = useRouter();
 
   useLayoutEffect(
     function syncChatSession() {
       updateChatSession({ history: formatHistory(history) });
     },
-    [id, history],
+    [id, history]
   );
 
   function handlePrompt(prompt: string, role: Role) {
     setChats(function reduceChats(chats) {
       return [...chats, { message: prompt, role, chat_id: id }];
     });
+    if (history.length === 0) {
+      router.refresh();
+    }
   }
 
   return (
