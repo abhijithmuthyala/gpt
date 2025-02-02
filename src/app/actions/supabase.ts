@@ -7,7 +7,7 @@ export async function getChatTitles(): Promise<
   { id: string; chat_id: string; title: string }[] | null
 > {
   const supabase = await createClient();
-  const { data, error } = await supabase.rpc("get_chat_titles"); // Call the updated get_chat_titles RPC
+  const { data, error } = await supabase.rpc("get_chat_titles");
 
   if (error) {
     console.error("Error fetching chat titles:", error);
