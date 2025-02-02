@@ -26,6 +26,10 @@
   ::view-transition-new(root) {
     animation-duration: 400ms;
   }
+
+  code {
+    text-wrap: auto;
+  }
 }
 
 nextjs-portal {

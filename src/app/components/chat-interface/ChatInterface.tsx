@@ -50,7 +50,7 @@ function Chats({ chats }: { chats: ChatMessage[] }) {
         return (
           <li
             key={chat.id ?? index}
-            className={`max-w-[75%] px-3 py-2 rounded-md ${isUser ? "self-end" : ""} ${
+            className={`max-w-[75%] overflow-x-auto px-3 py-2 rounded-md ${isUser ? "self-end" : ""} ${
               isUser ? "bg-zinc-300" : "bg-lime-100"
             }`}
           >
