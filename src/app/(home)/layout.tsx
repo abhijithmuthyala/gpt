@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import ChatLinks from "../components/chat-links/ChatLinks";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
@@ -15,7 +14,7 @@ export default function RootLayout({
         <Sidebar>
           <ChatLinks />
         </Sidebar>
-        <Suspense>{children}</Suspense>
+        {children}
       </div>
     </div>
   );
