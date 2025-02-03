@@ -35,7 +35,9 @@ export default function PromptForm({
 
     const [{ response, error }] = await Promise.all([
       sendQuery(formData, id, history),
-      history.length === 0 ? updateChatTitle(id, prompt) : Promise.resolve(),
+      history.length === 0
+        ? updateChatTitle(id, prompt, true)
+        : Promise.resolve(),
     ]);
 
     if (!error) {

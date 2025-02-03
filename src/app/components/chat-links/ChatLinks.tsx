@@ -9,7 +9,7 @@ export default async function ChatLinks() {
       {chats?.map(function renderLink(chat) {
         return (
           <li key={chat.id}>
-            <ChatLink id={chat.chat_id}>{chat.title}</ChatLink>
+            <ChatLink id={chat.chat_id} title={chat.title} />
           </li>
         );
       })}

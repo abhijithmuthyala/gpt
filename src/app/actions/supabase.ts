@@ -18,15 +18,26 @@ export async function getChatTitles(): Promise<
   return data;
 }
 
-export async function updateChatTitle(chatId: string, title: string) {
+export async function updateChatTitle(
+  chatId: string,
+  title: string,
+  trim = false,
+) {
   const chatSession = startChatSession({ history: [] });
-  const [supabase, result] = await Promise.all([
-    createClient(),
-    chatSession.sendMessage(
-      "Return an extremely concise version of the following prompt so that I can use it in a sidebar: \n" +
-        title,
-    ),
-  ]);
+  const resultProm = trim
+    ? chatSession.sendMessage(
+        "Return an extremely concise version of the following prompt so that I can use it in a sidebar: \n" +
+          title,
+      )
+    : Promise.resolve({
+        response: {
+          text() {
+            return title;
+          },
+        },
+      });
+
+  const [supabase, result] = await Promise.all([createClient(), resultProm]);
 
   const { data, error } = await supabase
     .from("chats")

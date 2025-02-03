@@ -2,19 +2,8 @@
 
 import React, { Children } from "react";
 import { v4 as uuid } from "uuid";
-import DeleteChat from "../DeleteChat";
-import EditChat from "../EditChat";
 
-export default function ChatLinkActions({ id }: { id: string }) {
-  return (
-    <ChatActionsMenu>
-      <DeleteChat id={id} />
-      <EditChat id={id} />
-    </ChatActionsMenu>
-  );
-}
-
-function ChatActionsMenu({ children }: { children: React.ReactNode }) {
+export function ChatActionsMenu({ children }: { children: React.ReactNode }) {
   return (
     <ul
       className="flex flex-wrap gap-2 items-center"
