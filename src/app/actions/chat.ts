@@ -5,7 +5,7 @@ import { formatHistory } from "@/utils/shared";
 import { GoogleGenerativeAIFetchError } from "@google/generative-ai";
 import { revalidatePath } from "next/cache";
 import { ChatMessage } from "../types";
-import { saveMessage } from "./supabase";
+import { saveMessage, updateChatTitle } from "./supabase";
 
 export async function sendQuery(
   data: FormData,
@@ -13,12 +13,18 @@ export async function sendQuery(
   history: ChatMessage[],
 ) {
   try {
+   
     const prompt = data.get("prompt") as string;
     const chatSession = startChatSession({ history: formatHistory(history) });
+    
     const [result] = await Promise.all([
       chatSession.sendMessage(prompt),
       saveMessage(prompt, "user", chatId),
     ]);
+    if (history.length===0){
+      await updateChatTitle(chatId,prompt)
+    }
+
     const response = result.response.text();
     await saveMessage(response, "model", chatId);
 
@@ -38,3 +44,4 @@ export async function sendQuery(
     return { response: null, error: error as string };
   }
 }
+

@@ -8,7 +8,7 @@ export default async function ChatLinks() {
     <ul className="flex flex-col gap-y-2">
       {chats?.map(function renderLink(chat) {
         return (
-          <li key={chat.id}>
+          <li key={chat.chat_id}>
             <ChatLink id={chat.chat_id}>{chat.title}</ChatLink>
           </li>
         );
