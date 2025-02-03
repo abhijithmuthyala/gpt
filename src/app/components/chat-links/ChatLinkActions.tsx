@@ -3,12 +3,13 @@
 import React, { Children } from "react";
 import { v4 as uuid } from "uuid";
 import DeleteChat from "../DeleteChat";
+import EditChat from "../EditChat";
 
 export default function ChatLinkActions({ id }: { id: string }) {
   return (
     <ChatActionsMenu>
       <DeleteChat id={id} />
-      <DeleteChat id={id} />
+      <EditChat id={id} />
     </ChatActionsMenu>
   );
 }

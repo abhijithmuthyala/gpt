@@ -1,5 +1,6 @@
 "use server";
 
+import { startChatSession } from "@/gemini/init";
 import { createClient } from "@/supabase/server";
 import { ChatMessage, Role } from "../types";
 
@@ -14,6 +15,28 @@ export async function getChatTitles(): Promise<
     return null;
   }
 
+  return data;
+}
+
+export async function updateChatTitle(chatId: string, title: string) {
+  const chatSession = startChatSession({ history: [] });
+  const [supabase, result] = await Promise.all([
+    createClient(),
+    chatSession.sendMessage(
+      "Return an extremely concise version of the following prompt so that I can use it in a sidebar: \n" +
+        title,
+    ),
+  ]);
+
+  const { data, error } = await supabase
+    .from("chats")
+    .update({ title: result.response.text() })
+    .eq("chat_id", chatId)
+    .single();
+
+  if (error) {
+    console.error(error);
+  }
   return data;
 }
 

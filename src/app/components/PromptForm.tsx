@@ -3,6 +3,7 @@
 import { useParams } from "next/navigation";
 import { useActionState, useRef } from "react";
 import { sendQuery } from "../actions/chat";
+import { updateChatTitle } from "../actions/supabase";
 import { ChatMessage, PromptState, Role } from "../types";
 
 export default function PromptForm({
@@ -26,19 +27,23 @@ export default function PromptForm({
     formRef.current?.reset();
 
     const prompt = formData.get("prompt") as string;
+    const id = params.chatId as string;
+
     queueMicrotask(function updatePrompts() {
       onPrompt(prompt, "user");
     });
-    const { response, error } = await sendQuery(
-      formData,
-      params.chatId as string,
-      history,
-    );
+
+    const [{ response, error }] = await Promise.all([
+      sendQuery(formData, id, history),
+      history.length === 0 ? updateChatTitle(id, prompt) : Promise.resolve(),
+    ]);
+
     if (!error) {
       queueMicrotask(function updatePrompts() {
         onPrompt(response as string, "model");
       });
     }
+
     return { response, error };
   }
 
