@@ -3,9 +3,10 @@
 import { createClient } from "@/supabase/server";
 import { ChatMessage, Role } from "../types";
 
+
 export async function getChatTitles(): Promise<
-  { id: string; chat_id: string; title: string }[] | null
-> {
+  { id: string; chat_id: string; title: string }[] | null>
+  {
   const supabase = await createClient();
   const { data, error } = await supabase.rpc("get_chat_titles");
 
@@ -15,6 +16,20 @@ export async function getChatTitles(): Promise<
   }
 
   return data;
+}
+
+export async function updateChatTitle(chatId: string, title: string) {
+  const supabase = await createClient()
+  const { data, error } = await supabase
+    .from('chats')
+    .update({ title })
+    .eq('chat_id', chatId)
+    .single();
+
+  if (error) {
+    console.error(error)
+  }
+  return data
 }
 
 export async function fetchChatHistory(chatId: string) {
