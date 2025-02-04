@@ -38,7 +38,7 @@ export default function ChatInterface({
   }
 
   return (
-    <Container maxWidth="lg" sx={{ height: '100vh' }}>
+    <Container>
       <Box 
         sx={{ 
           display: 'flex', 
