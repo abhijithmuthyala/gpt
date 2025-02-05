@@ -14,10 +14,7 @@ export default function NewChat() {
   }
 
   return (
-    <Button
-      onClick={createNewChat}
-      className="px-3 py-2 rounded-md bg-lime-500 text-white"
-    >
+    <Button onClick={createNewChat} variant={"default"}>
       Start a new chat
     </Button>
   );

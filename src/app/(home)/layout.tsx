@@ -1,4 +1,3 @@
-import { Suspense } from "react";
 import ChatLinks from "../components/chat-links/ChatLinks";
 import Header from "../components/Header";
 import Sidebar from "../components/Sidebar";
@@ -13,9 +12,7 @@ export default function RootLayout({
       <Header />
       <div className="grid sm:grid-cols-[12rem_1fr] grow">
         <Sidebar>
-          <Suspense fallback="loading">
-            <ChatLinks />
-          </Suspense>
+          <ChatLinks />
         </Sidebar>
         {children}
       </div>

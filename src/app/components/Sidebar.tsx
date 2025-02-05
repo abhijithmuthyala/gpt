@@ -16,7 +16,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
 
   return (
     <div
-      className="bg-gray-100 sticky overflow-y-auto overflow-x-hidden sm:block hidden"
+      className="sticky overflow-y-auto overflow-x-hidden sm:block hidden"
       style={{ maxHeight: height, top: `calc(100vh - ${height})` }}
       ref={ref}
     >

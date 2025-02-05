@@ -1,4 +1,5 @@
 import { login, signup } from "@/app/actions/auth";
+import Logo from "@/app/components/Logo";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -6,11 +7,10 @@ import {
   CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { ArrowUpRight, Cpu } from "lucide-react"; // Adding Cpu icon from lucide-react
+import { ArrowUpRight } from "lucide-react"; // Adding Cpu icon from lucide-react
 import Link from "next/link";
 
 const EMAIL_VALIDATION = {
@@ -33,15 +33,7 @@ export default function LoginPage() {
     <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-lime-100 to-lime-200 px-4">
       <Card className="max-w-96">
         <CardHeader>
-          <Link
-            href={"/"}
-            className="flex self-center items-center justify-center gap-2"
-          >
-            <Cpu className="h-8 w-8 text-lime-700" />
-            <CardTitle className="text-3xl font-bold text-center text-lime-700">
-              nanoGPT
-            </CardTitle>
-          </Link>
+          <Logo />
           <CardDescription className="text-center font-medium text-balance">
             Your personal AI assistant, powered by{" "}
             <Button asChild variant={"link"} className="px-0">

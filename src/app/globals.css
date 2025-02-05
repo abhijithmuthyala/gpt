@@ -23,6 +23,7 @@
   nextjs-portal {
     display: none; /* Why would you do this to me Rauchg? */
   }
+
   :root {
     --background: 0 0% 100%;
     --foreground: 240 10% 3.9%;
@@ -75,6 +76,22 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
+  }
+
+  @keyframes grid-fade {
+    0%,
+    100% {
+      opacity: 0.2;
+    }
+    50% {
+      opacity: 0.3;
+    }
+  }
+}
+
+@layer utilities {
+  .animate-grid-fade {
+    animation: grid-fade 4s ease-in-out infinite;
   }
 }
 
