@@ -10,8 +10,6 @@ export default function NewChat() {
 
   async function createNewChat(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
-    console.log("Creating new chat ", chatId);
-
     router.push(`/${chatId}`);
   }
 

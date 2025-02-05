@@ -1,12 +1,11 @@
 "use client";
 
-import { updateChatTitle } from "@/app/actions/supabase";
-import { Input } from "@/components/ui/input";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
-import { useParams, useRouter } from "next/navigation";
-import { startTransition, useState } from "react";
+import { useParams } from "next/navigation";
+import { useState } from "react";
 import Accordian from "../Accordian";
+import ChatTitleForm from "../ChatTitleForm";
 import DeleteChat from "../DeleteChat";
 import EditChat from "../EditChat";
 import { ChatActionsMenu } from "./ChatLinkActions";
@@ -23,19 +22,16 @@ export default function ChatLink({
   const [isEditing, setIsEditing] = useState(false);
   const [actionIsPending, setActionIsPending] = useState(false);
 
-  function toggleTitleEdit() {
-    setIsEditing((e) => !e);
-  }
-
-  function onDelete(toggleAccordian: () => void) {
-    setActionIsPending(true);
-    toggleAccordian();
-  }
-
   let content;
   if (isEditing) {
     content = (
-      <ChatTitleForm onToggleEdit={toggleTitleEdit} id={id} title={title} />
+      <ChatTitleForm
+        onSubmit={handlePendingAction}
+        onSuccess={handleResolvedAction}
+        onToggle={toggleTitleEdit}
+        id={id}
+        title={title}
+      />
     );
   } else {
     content = (
@@ -71,43 +67,22 @@ export default function ChatLink({
       {content}
     </div>
   );
-}
 
-function ChatTitleForm({
-  title,
-  id,
-  onToggleEdit,
-}: {
-  title: string;
-  id: string;
-  onToggleEdit: () => void;
-}) {
-  const router = useRouter();
-
-  async function updateTitleAction(formData: FormData) {
-    const newTitle = formData.get("title") as string;
-    await updateChatTitle(id, newTitle);
-
-    /*
-    Another transition is needed after await.
-    This batches the updates from client and the server in one render pass.
-    */
-    startTransition(function updateClientAndServerComponentInATransition() {
-      router.refresh();
-      onToggleEdit();
-    });
+  function handlePendingAction() {
+    setIsEditing(false);
+    setActionIsPending(true);
   }
 
-  return (
-    <form action={updateTitleAction}>
-      <Input type="submit" className="hidden" hidden />
-      <Input
-        type="text"
-        className="block"
-        defaultValue={title}
-        name="title"
-        ref={(node) => node?.focus()}
-      />
-    </form>
-  );
+  function toggleTitleEdit() {
+    setIsEditing((e) => !e);
+  }
+
+  function handleResolvedAction() {
+    setActionIsPending(false);
+  }
+
+  function onDelete(toggleAccordian: () => void) {
+    setActionIsPending(true);
+    toggleAccordian();
+  }
 }

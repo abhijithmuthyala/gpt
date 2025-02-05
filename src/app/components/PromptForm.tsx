@@ -56,7 +56,7 @@ export default function PromptForm({
     <form
       action={queryAction}
       ref={formRef}
-      className="sticky z-50 w-full bottom-6 px-4 py-3 max-w-xl mx-auto rounded-lg grid grid-cols-[1fr_3rem] gap-x-2 items-center bg-slate-200 shadow-inner shadow-gray-400"
+      className="sticky z-40 w-full bottom-6 px-4 py-3 max-w-xl mx-auto rounded-lg grid grid-cols-[1fr_3rem] gap-x-2 items-center bg-slate-200 shadow-inner shadow-gray-400"
     >
       <Textarea
         name="prompt"
