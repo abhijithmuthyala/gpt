@@ -56,9 +56,9 @@ function Chats({ chats }: { chats: ChatMessage[] }) {
             }`}
           >
             {isUser ? (
-              <User className="w-5 h-5 shrink-0 text-blue-600" />
+              <User className="w-5 h-5 shrink-0 text-blue-800" />
             ) : (
-              <Bot className="w-5 h-5 shrink-0 text-zinc-600" />
+              <Bot className="w-5 h-5 shrink-0 text-zinc-800" />
             )}
             <div>
               <Markdown>{chat.message}</Markdown>

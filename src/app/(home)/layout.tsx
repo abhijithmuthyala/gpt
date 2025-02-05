@@ -10,7 +10,7 @@ export default function RootLayout({
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      <div className="grid sm:grid-cols-[12rem_1fr] grow">
+      <div className="grid sm:grid-cols-[14rem_1fr] grow">
         <Sidebar>
           <ChatLinks />
         </Sidebar>

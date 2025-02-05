@@ -1,6 +1,8 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
+import { Textarea } from "@/components/ui/textarea";
+import { SendHorizontalIcon } from "lucide-react";
 import { useParams } from "next/navigation";
 import { useActionState, useRef } from "react";
 import { sendQuery } from "../actions/chat";
@@ -54,21 +56,28 @@ export default function PromptForm({
     <form
       action={queryAction}
       ref={formRef}
-      className="sticky bottom-0 bg-slate-400 py-4 px-2"
+      className="sticky z-50 w-full bottom-6 px-4 py-3 max-w-xl mx-auto rounded-lg grid grid-cols-[1fr_3rem] gap-x-2 items-center bg-slate-200 shadow-inner shadow-gray-400"
     >
-      <textarea
+      <Textarea
         name="prompt"
         id="prompt"
         disabled={queryIsPending}
-        placeholder="Ask a question"
-        className="w-full p-2 rounded-md border border-gray-300 focus:outline-hidden focus:border-blue-500 max-h-32 min-h-16 overflow-y-auto resize-none"
-      ></textarea>
-      <Button type="submit" disabled={queryIsPending}>
-        {queryIsPending ? "Loading..." : "Send"}
+        placeholder="Ask Gemini"
+        className="w-full max-h-32 min-h-16 overflow-y-auto resize-none text-lime-950 font-medium text-lg"
+        ref={(node) => node?.focus()}
+      />
+      <Button
+        type="submit"
+        disabled={queryIsPending}
+        className={`max-w-48 grid place-items-center ${queryIsPending ? "animate-pulse" : ""}`}
+      >
+        <SendHorizontalIcon />
       </Button>
-      {formState?.error && !queryIsPending && (
-        <FormError error={formState.error} />
-      )}
+      <div className="col-span-full row-start-2">
+        {formState?.error && !queryIsPending && (
+          <FormError error={formState.error} />
+        )}
+      </div>
     </form>
   );
 }

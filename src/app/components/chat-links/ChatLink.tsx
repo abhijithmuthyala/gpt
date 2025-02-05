@@ -87,7 +87,7 @@ function ChatTitleForm({
 
   return (
     <form action={updateTitleAction}>
-      <Input type="submit" hidden />
+      <Input type="submit" className="hidden" hidden />
       <Input
         type="text"
         className="block"

@@ -22,7 +22,7 @@ export default function DeleteChat({ id }: { id: string }) {
   }
 
   return (
-    <Button onClick={handleDelete} disabled={isPending}>
+    <Button onClick={handleDelete} variant={"destructive"} disabled={isPending}>
       {isPending ? "Deleting..." : "Delete"}
     </Button>
   );
