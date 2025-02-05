@@ -3,6 +3,7 @@
 import { ChatMessage, Role } from "@/app/types";
 import { updateChatSession } from "@/gemini/init";
 import { formatHistory } from "@/utils/shared";
+import { Bot, User } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useLayoutEffect, useState } from "react";
 import Markdown from "react-markdown";
@@ -22,7 +23,7 @@ export default function ChatInterface({
     function syncChatSession() {
       updateChatSession({ history: formatHistory(history) });
     },
-    [id, history],
+    [id, history]
   );
 
   function handlePrompt(prompt: string, role: Role) {
@@ -50,10 +51,15 @@ function Chats({ chats }: { chats: ChatMessage[] }) {
         return (
           <li
             key={chat.id ?? index}
-            className={`max-w-[75%] overflow-x-auto px-3 py-2 rounded-md ${isUser ? "self-end" : ""} ${
-              isUser ? "bg-zinc-300" : "bg-lime-100"
+            className={`max-w-[75%] overflow-x-auto px-3 py-2 rounded-md flex gap-2 ${
+              isUser ? "self-end bg-blue-100" : "bg-zinc-100"
             }`}
           >
+            {isUser ? (
+              <User className="w-5 h-5 shrink-0 text-blue-600" />
+            ) : (
+              <Bot className="w-5 h-5 shrink-0 text-zinc-600" />
+            )}
             <div>
               <Markdown>{chat.message}</Markdown>
             </div>

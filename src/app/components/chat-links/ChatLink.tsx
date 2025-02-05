@@ -53,7 +53,7 @@ export default function ChatLink({
 
   return (
     <div
-      className={`hover:bg-lime-50 focus-within:bg-lime-50 p-2 rounded-md ${isCurrentChat ? "bg-lime-100 focus-within:bg-lime-100 hover:bg-lime-100" : ""}`}
+      className={`hover:bg-slate-100 focus-within:bg-slate-100 p-2 rounded-md ${isCurrentChat ? "bg-slate-200 focus-within:bg-slate-200 hover:bg-slate-200" : ""}`}
     >
       {content}
     </div>
