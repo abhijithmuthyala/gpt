@@ -2,6 +2,7 @@
 
 import { updateChatTitle } from "@/app/actions/supabase";
 import { Input } from "@/components/ui/input";
+import { ChevronDown, ChevronUp } from "lucide-react";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { startTransition, useState } from "react";
@@ -44,14 +45,15 @@ export default function ChatLink({
             <EditChat onToggle={toggleTitleEdit} />
           </ChatActionsMenu>
         }
-        toggle={<span>+</span>}
+        toggleClosed={<ChevronDown className="w-2" />}
+        toggleOpened={<ChevronUp className="w-2" />}
       />
     );
   }
 
   return (
     <div
-      className={`hover:bg-amber-100 p-2 rounded-md ${isCurrentChat ? "bg-gray-200" : ""}`}
+      className={`hover:bg-lime-50 focus-within:bg-lime-50 p-2 rounded-md ${isCurrentChat ? "bg-lime-100 focus-within:bg-lime-100 hover:bg-lime-100" : ""}`}
     >
       {content}
     </div>

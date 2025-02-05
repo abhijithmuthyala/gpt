@@ -7,10 +7,16 @@ import React, { useState } from "react";
 type AccordianProps = {
   title: React.ReactNode;
   details: React.ReactNode;
-  toggle: React.ReactNode;
+  toggleOpened: React.ReactNode;
+  toggleClosed: React.ReactNode;
 };
 
-export default function Accordian({ title, details, toggle }: AccordianProps) {
+export default function Accordian({
+  title,
+  details,
+  toggleOpened,
+  toggleClosed,
+}: AccordianProps) {
   const [expanded, setExpanded] = useState(false);
 
   function toggleAccordian() {
@@ -26,10 +32,11 @@ export default function Accordian({ title, details, toggle }: AccordianProps) {
       >
         <p className="col-span-2 col-start-1 row-start-1 grid">{title}</p>
         <Button
+          variant={"secondary"}
           onClick={toggleAccordian}
-          className="min-w-8 aspect-square col-start-2 row-start-1 bg-emerald-200 rounded-md"
+          className="col-start-2 row-start-1"
         >
-          {toggle}
+          {expanded ? toggleOpened : toggleClosed}
         </Button>
       </div>
       {expanded && details}
