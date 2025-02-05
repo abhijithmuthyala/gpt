@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useParams } from "next/navigation";
 import { useActionState, useRef } from "react";
 import { sendQuery } from "../actions/chat";
@@ -16,13 +17,13 @@ export default function PromptForm({
   const params = useParams();
   const [formState, queryAction, queryIsPending] = useActionState(
     handlePromptAction,
-    null,
+    null
   );
   const formRef = useRef<HTMLFormElement>(null);
 
   async function handlePromptAction(
     formState: PromptState,
-    formData: FormData,
+    formData: FormData
   ) {
     formRef.current?.reset();
 
@@ -62,9 +63,9 @@ export default function PromptForm({
         placeholder="Ask a question"
         className="w-full p-2 rounded-md border border-gray-300 focus:outline-hidden focus:border-blue-500 max-h-32 min-h-16 overflow-y-auto resize-none"
       ></textarea>
-      <button type="submit" disabled={queryIsPending}>
+      <Button type="submit" disabled={queryIsPending}>
         {queryIsPending ? "Loading..." : "Send"}
-      </button>
+      </Button>
       {formState?.error && !queryIsPending && (
         <FormError error={formState.error} />
       )}

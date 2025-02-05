@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { setStateInViewTransition } from "@/utils/client";
 import React, { useState } from "react";
 
@@ -24,12 +25,12 @@ export default function Accordian({ title, details, toggle }: AccordianProps) {
         className={`grid grid-cols-[1fr_2rem] gap-x-6 items-center ${expanded ? "mb-3" : ""}`}
       >
         <p className="col-span-2 col-start-1 row-start-1 grid">{title}</p>
-        <button
+        <Button
           onClick={toggleAccordian}
           className="min-w-8 aspect-square col-start-2 row-start-1 bg-emerald-200 rounded-md"
         >
           {toggle}
-        </button>
+        </Button>
       </div>
       {expanded && details}
     </>

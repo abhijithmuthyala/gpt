@@ -1,6 +1,7 @@
 "use client";
 
 import { updateChatTitle } from "@/app/actions/supabase";
+import { Input } from "@/components/ui/input";
 import Link from "next/link";
 import { useParams, useRouter } from "next/navigation";
 import { startTransition, useState } from "react";
@@ -84,8 +85,8 @@ function ChatTitleForm({
 
   return (
     <form action={updateTitleAction}>
-      <input type="submit" hidden />
-      <input
+      <Input type="submit" hidden />
+      <Input
         type="text"
         className="block"
         defaultValue={title}

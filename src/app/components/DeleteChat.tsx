@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { useTransition } from "react";
 import { deleteChat } from "../actions/supabase";
@@ -21,8 +22,8 @@ export default function DeleteChat({ id }: { id: string }) {
   }
 
   return (
-    <button onClick={handleDelete} disabled={isPending}>
+    <Button onClick={handleDelete} disabled={isPending}>
       {isPending ? "Deleting..." : "Delete"}
-    </button>
+    </Button>
   );
 }

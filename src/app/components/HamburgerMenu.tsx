@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { setStateInViewTransition } from "@/utils/client";
 import React, { useState } from "react";
 import { useDocumentOverflowEffect } from "../hooks";
@@ -19,9 +20,9 @@ export default function HamburgerMenu({
   }
 
   const toggleButton = (
-    <button className="bg-blue-300 p-2 rounded-md" onClick={toggle}>
+    <Button className="bg-blue-300 p-2 rounded-md" onClick={toggle}>
       {open ? "close" : "open"}
-    </button>
+    </Button>
   );
 
   if (!open) {

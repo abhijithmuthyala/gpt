@@ -1,5 +1,6 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
 import { useRouter } from "next/navigation";
 import { v4 as uuid } from "uuid";
 
@@ -13,11 +14,11 @@ export default function NewChat() {
   }
 
   return (
-    <button
+    <Button
       onClick={createNewChat}
       className="px-3 py-2 rounded-md bg-lime-500 text-white"
     >
       Start a new chat
-    </button>
+    </Button>
   );
 }
