@@ -1,4 +1,4 @@
-import { Button } from "@/components/ui/button";
+import NewChat from "../components/NewChat";
 
 export default function HomePage() {
   return (
@@ -11,16 +11,14 @@ export default function HomePage() {
       />
       <div className="mb-8 max-w-xl text-center text-balance">
         <h1 className="text-4xl font-bold mb-2 text-lime-900">
-          Experience Gemini's Intelligence
+          Experience Gemini&apos;s Intelligence
         </h1>
         <p className="text-lg text-lime-700">
-          Unlock powerful conversations with Google's most advanced AI. Code,
-          create, analyze and learn - all in one place.
+          Unlock powerful conversations with Google&apos;s most advanced AI.
+          Code, create, analyze and learn - all in one place.
         </p>
       </div>
-      <Button className="relative bg-lime-600 hover:bg-lime-700 scale-125">
-        Start a new chat
-      </Button>
+      <NewChat />
     </main>
   );
 }

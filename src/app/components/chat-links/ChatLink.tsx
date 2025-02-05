@@ -21,9 +21,15 @@ export default function ChatLink({
   const params = useParams();
   const isCurrentChat = id === params.chatId;
   const [isEditing, setIsEditing] = useState(false);
+  const [actionIsPending, setActionIsPending] = useState(false);
 
   function toggleTitleEdit() {
     setIsEditing((e) => !e);
+  }
+
+  function onDelete(toggleAccordian: () => void) {
+    setActionIsPending(true);
+    toggleAccordian();
   }
 
   let content;
@@ -39,12 +45,17 @@ export default function ChatLink({
             {title}
           </Link>
         }
-        details={
-          <ChatActionsMenu>
-            <DeleteChat id={id} />
-            <EditChat onToggle={toggleTitleEdit} />
-          </ChatActionsMenu>
-        }
+        details={function renderDetails(toggleAccordian) {
+          return (
+            <ChatActionsMenu>
+              <DeleteChat
+                onDelete={onDelete.bind(null, toggleAccordian)}
+                id={id}
+              />
+              <EditChat onToggle={toggleTitleEdit} />
+            </ChatActionsMenu>
+          );
+        }}
         toggleClosed={<ChevronDown className="w-2" />}
         toggleOpened={<ChevronUp className="w-2" />}
       />
@@ -53,7 +64,9 @@ export default function ChatLink({
 
   return (
     <div
-      className={`hover:bg-slate-100 focus-within:bg-slate-100 p-2 rounded-md ${isCurrentChat ? "bg-slate-200 focus-within:bg-slate-200 hover:bg-slate-200" : "bg-zinc-50"}`}
+      className={`hover:bg-slate-100 focus-within:bg-slate-100 p-2 rounded-md ${isCurrentChat ? "bg-slate-200 focus-within:bg-slate-200 hover:bg-slate-200" : "bg-zinc-50"} ${
+        actionIsPending ? "opacity-50 pointer-events-none animate-pulse" : ""
+      }`}
     >
       {content}
     </div>

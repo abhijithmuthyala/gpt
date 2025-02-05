@@ -9,15 +9,22 @@ import { deleteChat } from "../actions/supabase";
 /*
 Why does a form action not work here? Conditionally rendered?
 */
-export default function DeleteChat({ id }: { id: string }) {
+export default function DeleteChat({
+  id,
+  onDelete,
+}: {
+  id: string;
+  onDelete: () => void;
+}) {
   const [isPending, startTransition] = useTransition();
   const router = useRouter();
 
   async function handleDelete() {
+    onDelete();
+
     startTransition(async function handleDeleteTransition() {
       await deleteChat(id);
-      router.replace("/");
-      router.refresh();
+      router.push("/");
     });
   }
 

@@ -6,7 +6,7 @@ import React, { useState } from "react";
 
 type AccordianProps = {
   title: React.ReactNode;
-  details: React.ReactNode;
+  details: (toggleAccordian: () => void) => React.ReactNode;
   toggleOpened: React.ReactNode;
   toggleClosed: React.ReactNode;
 };
@@ -39,7 +39,7 @@ export default function Accordian({
           {expanded ? toggleOpened : toggleClosed}
         </Button>
       </div>
-      {expanded && details}
+      {expanded && details(toggleAccordian)}
     </>
   );
 }

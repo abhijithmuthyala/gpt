@@ -10,11 +10,16 @@ export default function NewChat() {
 
   async function createNewChat(e: React.MouseEvent<HTMLButtonElement>) {
     e.preventDefault();
+    console.log("Creating new chat ", chatId);
+
     router.push(`/${chatId}`);
   }
 
   return (
-    <Button onClick={createNewChat} variant={"default"}>
+    <Button
+      onClick={createNewChat}
+      className="bg-lime-600 hover:bg-lime-700 scale-125"
+    >
       Start a new chat
     </Button>
   );
