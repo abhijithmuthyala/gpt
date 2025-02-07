@@ -23,7 +23,6 @@ export type PromptState = {
 
 export type ButtonClickEvent = React.MouseEvent<HTMLButtonElement>;
 
-
 export type Fields = {
   email: string;
   password: string;
@@ -31,19 +30,16 @@ export type Fields = {
 
 export type FormState = {
   success: boolean;
-  data: Fields
+  data: Fields;
   errors: Partial<z.typeToFlattenedError<Fields, string>> | null;
 };
 
 export type ActionFunction<T> = (
-
-
   formState: FormState,
-  formData: FormData
+  formData: FormData,
 ) => Promise<T>;
 
 export type FormActionType = "login" | "signup";
-
 
 type SafeParseBase = {
   success: boolean;

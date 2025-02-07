@@ -23,6 +23,10 @@ export default function ChatTitleForm({
   const router = useRouter();
 
   async function updateTitleAction(formData: FormData) {
+    /*
+    Actions are transitions by default and updated are batched. 
+    To update local state immediately, pull it out of the transition.
+    */
     queueMicrotask(onSubmit);
 
     const newTitle = formData.get("title") as string;
@@ -30,7 +34,8 @@ export default function ChatTitleForm({
 
     /*
     Another transition is needed after await.
-    This batches the updates from client and the server in one render pass.
+    This batches updates from the client and the server, so that
+    the final fiber tree is commited at once.
     */
     startTransition(function updateClientAndServerComponentInATransition() {
       router.refresh();

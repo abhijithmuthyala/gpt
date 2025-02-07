@@ -1,0 +1,35 @@
+:root {
+  --elevation-stroke: 0 0 0 1px hsl(var(--primary-860-hsl) / 0.08);
+  --elevation-low: 0 1px 0 hsl(var(--primary-860-hsl) / 0.1),
+    0 1.5px 0 hsl(var(--primary-900-hsl) / 0.025),
+    0 2px 0 hsl(var(--primary-860-hsl) / 0.025);
+  --elevation-medium: 0 4px 4px hsl(var(--black-500-hsl) / 0.08);
+  --elevation-high: 0 8px 16px hsl(var(--black-500-hsl) / 0.16);
+
+  --shadow-border: 0 0 0 1px hsl(none 0% 0%/0.08);
+  --shadow-border-filter: drop-shadow(0 0 1px hsl(none 0% 0%/0.08));
+  --shadow-button-overlay: 0 12px 24px 0 hsl(none 0% 0%/0.24);
+  --shadow-button-overlay-filter: drop-shadow(0 12px 24px hsl(none 0% 0%/0.24));
+  --shadow-high: 0 12px 36px 0 hsl(none 0% 0%/0.12);
+  --shadow-high-filter: drop-shadow(0 12px 36px hsl(none 0% 0%/0.12));
+  --shadow-ledge: 0 2px 0 0 hsl(none 0% 0%/0.03),
+    0 1.5px 0 0 hsl(none 0% 0%/0.03), 0 1px 0 0 hsl(none 0% 0%/0.08);
+  --shadow-ledge-filter: drop-shadow(0 1.5px 0 hsl(none 0% 0%/0.12));
+  --shadow-low: 0 1px 4px 0 hsl(none 0% 0%/0.08);
+  --shadow-low-filter: drop-shadow(0 1px 4px hsl(none 0% 0%/0.08));
+  --shadow-low-active: 0 0 4px 0 hsl(none 0% 0%/0.08);
+  --shadow-low-active-filter: drop-shadow(0 0 4px hsl(none 0% 0%/0.08));
+  --shadow-low-hover: 0 4px 8px 0 hsl(none 0% 0%/0.08);
+  --shadow-low-hover-filter: drop-shadow(0 4px 8px hsl(none 0% 0%/0.08));
+  --shadow-medium: 0 4px 8px 0 hsl(none 0% 0%/0.08);
+  --shadow-medium-filter: drop-shadow(0 4px 8px hsl(none 0% 0%/0.08));
+  --shadow-mobile-navigator-x: 0 0 9px 0 hsl(none 0% 0%/0.13);
+  --shadow-mobile-navigator-x-filter: drop-shadow(0 0 9px hsl(none 0% 0%/0.13));
+  --shadow-top-high: 0 -12px 36px 0 hsl(none 0% 0%/0.12);
+  --shadow-top-high-filter: drop-shadow(0 -12px 36px hsl(none 0% 0%/0.12));
+  --shadow-top-ledge: 0 -2px 0 0 hsl(none 0% 0%/0.03),
+    0 -1.5px 0 0 hsl(none 0% 0%/0.03), 0 -1px 0 0 hsl(none 0% 0%/0.08);
+  --shadow-top-ledge-filter: drop-shadow(0 -1.5px 0 hsl(none 0% 0%/0.12));
+  --shadow-top-low: 0 -1px 4px 0 hsl(none 0% 0%/0.08);
+  --shadow-top-low-filter: drop-shadow(0 -1px 4px hsl(none 0% 0%/0.08));
+}

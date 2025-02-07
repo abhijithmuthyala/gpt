@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { fetchChatHistory } from "../../actions/supabase";
+import { checkIfChatExists, fetchChatHistory } from "../../actions/supabase";
 import ChatInterface from "../../components/chat-interface/ChatInterface";
 
 export default async function ChatPage({
@@ -8,12 +8,12 @@ export default async function ChatPage({
   params: Promise<{ chatId: string }>;
 }) {
   const { chatId } = await params;
-  if (typeof chatId !== "string") {
-    return notFound();
-  }
-  const chatHistory = await fetchChatHistory(chatId);
+  const [chatExists, chatHistory] = await Promise.all([
+    checkIfChatExists(chatId),
+    fetchChatHistory(chatId),
+  ]);
 
-  if (!chatHistory) {
+  if (!chatHistory || !chatExists) {
     return notFound();
   }
 

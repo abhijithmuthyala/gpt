@@ -1,0 +1,10 @@
+@import "./styles/colors.css";
+
+@theme {
+  --brightness: calc(0.5 + var(--saturation-factor, 1) * 0.5);
+  --contrast: var(--saturation-factor, 1);
+  --theme-base-color-amount: 50%;
+  --theme-text-color-amount: 38%;
+
+  --saturation-factor: 1;
+}

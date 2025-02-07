@@ -1,7 +1,10 @@
 "use server";
 
+import { v4 as uuid } from "uuid";
+
 import { startChatSession } from "@/gemini/init";
 import { createClient } from "@/supabase/server";
+import { redirect } from "next/navigation";
 import { ChatMessage, Role } from "../types";
 
 export async function getChatTitles(): Promise<
@@ -16,6 +19,33 @@ export async function getChatTitles(): Promise<
   }
 
   return data;
+}
+
+export async function startNewChat() {
+  const id = uuid();
+  const supabase = await createClient();
+  const { error } = await supabase.from("chats").insert({
+    chat_id: id,
+  });
+  if (error) {
+    console.error("Error inserting chat:", error);
+  }
+  redirect(`/${id}`);
+}
+
+export async function checkIfChatExists(chatId: string) {
+  const supabase = await createClient();
+  const { error } = await supabase
+    .from("chats")
+    .select("chat_id")
+    .eq("chat_id", chatId)
+    .single();
+
+  if (error === null) {
+    return true;
+  } else {
+    return false;
+  }
 }
 
 export async function updateChatTitle(

@@ -22,7 +22,7 @@ export default function AuthForm() {
   const [type, setType] = useState<FormActionType>("login");
   const [formState, formAction, isPending] = useActionState(
     handleSubmit,
-    initFormState
+    initFormState,
   );
 
   async function handleSubmit(formState: FormState, formData: FormData) {

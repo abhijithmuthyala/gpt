@@ -1,0 +1,645 @@
+@theme {
+  --bg-overlay-opacity-1: 0.9;
+  --bg-overlay-opacity-2: 0.8;
+  --bg-overlay-opacity-3: 0.7;
+  --bg-overlay-opacity-4: 0.6;
+  --bg-overlay-opacity-5: 0.3;
+  --bg-overlay-opacity-6: 0.15;
+  --bg-overlay-opacity-hover: 0.7;
+  --bg-overlay-opacity-hover-inverse: 0.02;
+  --bg-overlay-opacity-active: 0.65;
+  --bg-overlay-opacity-active-inverse: 0.03;
+  --bg-overlay-opacity-selected: 0.6;
+  --bg-overlay-opacity-selected-inverse: 0.04;
+  --bg-overlay-opacity-chat: 0.9;
+  --bg-overlay-opacity-home: 0.7;
+  --bg-overlay-opacity-home-card: 0.9;
+  --bg-overlay-opacity-app-frame: var(--bg-overlay-opacity-5);
+  --bg-overlay-opacity-floating: 0.95;
+
+  --opacity-1: hsl(var(--opacity-1-hsl) / 0.011764705882352941);
+  --opacity-1-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-4: hsl(var(--opacity-4-hsl) / 0.0392156862745098);
+  --opacity-4-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-8: hsl(var(--opacity-8-hsl) / 0.0784313725490196);
+  --opacity-8-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-12: hsl(var(--opacity-12-hsl) / 0.12156862745098039);
+  --opacity-12-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-16: hsl(var(--opacity-16-hsl) / 0.1607843137254902);
+  --opacity-16-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-20: hsl(var(--opacity-20-hsl) / 0.2);
+  --opacity-20-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-24: hsl(var(--opacity-24-hsl) / 0.23921568627450981);
+  --opacity-24-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-28: hsl(var(--opacity-28-hsl) / 0.2784313725490196);
+  --opacity-28-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-32: hsl(var(--opacity-32-hsl) / 0.3215686274509804);
+  --opacity-32-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-36: hsl(var(--opacity-36-hsl) / 0.3607843137254902);
+  --opacity-36-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-40: hsl(var(--opacity-40-hsl) / 0.4);
+  --opacity-40-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-44: hsl(var(--opacity-44-hsl) / 0.4392156862745098);
+  --opacity-44-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-48: hsl(var(--opacity-48-hsl) / 0.47843137254901963);
+  --opacity-48-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-52: hsl(var(--opacity-52-hsl) / 0.5215686274509804);
+  --opacity-52-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-56: hsl(var(--opacity-56-hsl) / 0.5607843137254902);
+  --opacity-56-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-60: hsl(var(--opacity-60-hsl) / 0.6);
+  --opacity-60-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-64: hsl(var(--opacity-64-hsl) / 0.6392156862745098);
+  --opacity-64-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-68: hsl(var(--opacity-68-hsl) / 0.6784313725490196);
+  --opacity-68-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-72: hsl(var(--opacity-72-hsl) / 0.7215686274509804);
+  --opacity-72-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-76: hsl(var(--opacity-76-hsl) / 0.7607843137254902);
+  --opacity-76-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-80: hsl(var(--opacity-80-hsl) / 0.8);
+  --opacity-80-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-84: hsl(var(--opacity-84-hsl) / 0.8392156862745098);
+  --opacity-84-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-88: hsl(var(--opacity-88-hsl) / 0.8784313725490196);
+  --opacity-88-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-92: hsl(var(--opacity-92-hsl) / 0.9215686274509803);
+  --opacity-92-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-96: hsl(var(--opacity-96-hsl) / 0.9607843137254902);
+  --opacity-96-hsl: 240 calc(var(--saturation-factor, 1) * 4%) 60.784%;
+  --opacity-blue-1: hsl(var(--opacity-blue-1-hsl) / 0.011764705882352941);
+  --opacity-blue-1-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-4: hsl(var(--opacity-blue-4-hsl) / 0.0392156862745098);
+  --opacity-blue-4-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-8: hsl(var(--opacity-blue-8-hsl) / 0.0784313725490196);
+  --opacity-blue-8-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-12: hsl(var(--opacity-blue-12-hsl) / 0.12156862745098039);
+  --opacity-blue-12-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-16: hsl(var(--opacity-blue-16-hsl) / 0.1607843137254902);
+  --opacity-blue-16-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-20: hsl(var(--opacity-blue-20-hsl) / 0.2);
+  --opacity-blue-20-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-24: hsl(var(--opacity-blue-24-hsl) / 0.23921568627450981);
+  --opacity-blue-24-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-28: hsl(var(--opacity-blue-28-hsl) / 0.2784313725490196);
+  --opacity-blue-28-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-32: hsl(var(--opacity-blue-32-hsl) / 0.3215686274509804);
+  --opacity-blue-32-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-36: hsl(var(--opacity-blue-36-hsl) / 0.3607843137254902);
+  --opacity-blue-36-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-40: hsl(var(--opacity-blue-40-hsl) / 0.4);
+  --opacity-blue-40-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-44: hsl(var(--opacity-blue-44-hsl) / 0.4392156862745098);
+  --opacity-blue-44-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-48: hsl(var(--opacity-blue-48-hsl) / 0.47843137254901963);
+  --opacity-blue-48-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-52: hsl(var(--opacity-blue-52-hsl) / 0.5215686274509804);
+  --opacity-blue-52-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-56: hsl(var(--opacity-blue-56-hsl) / 0.5607843137254902);
+  --opacity-blue-56-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-60: hsl(var(--opacity-blue-60-hsl) / 0.6);
+  --opacity-blue-60-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-64: hsl(var(--opacity-blue-64-hsl) / 0.6392156862745098);
+  --opacity-blue-64-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-68: hsl(var(--opacity-blue-68-hsl) / 0.6784313725490196);
+  --opacity-blue-68-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-72: hsl(var(--opacity-blue-72-hsl) / 0.7215686274509804);
+  --opacity-blue-72-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-76: hsl(var(--opacity-blue-76-hsl) / 0.7607843137254902);
+  --opacity-blue-76-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-80: hsl(var(--opacity-blue-80-hsl) / 0.8);
+  --opacity-blue-80-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-84: hsl(var(--opacity-blue-84-hsl) / 0.8392156862745098);
+  --opacity-blue-84-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-88: hsl(var(--opacity-blue-88-hsl) / 0.8784313725490196);
+  --opacity-blue-88-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-92: hsl(var(--opacity-blue-92-hsl) / 0.9215686274509803);
+  --opacity-blue-92-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blue-96: hsl(var(--opacity-blue-96-hsl) / 0.9607843137254902);
+  --opacity-blue-96-hsl: 209.339 calc(var(--saturation-factor, 1) * 100%) 44.51%;
+  --opacity-blurple-1: hsl(var(--opacity-blurple-1-hsl) / 0.011764705882352941);
+  --opacity-blurple-1-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-4: hsl(var(--opacity-blurple-4-hsl) / 0.0392156862745098);
+  --opacity-blurple-4-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-8: hsl(var(--opacity-blurple-8-hsl) / 0.0784313725490196);
+  --opacity-blurple-8-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-12: hsl(
+    var(--opacity-blurple-12-hsl) / 0.12156862745098039
+  );
+  --opacity-blurple-12-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-16: hsl(var(--opacity-blurple-16-hsl) / 0.1607843137254902);
+  --opacity-blurple-16-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-20: hsl(var(--opacity-blurple-20-hsl) / 0.2);
+  --opacity-blurple-20-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-24: hsl(
+    var(--opacity-blurple-24-hsl) / 0.23921568627450981
+  );
+  --opacity-blurple-24-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-28: hsl(var(--opacity-blurple-28-hsl) / 0.2784313725490196);
+  --opacity-blurple-28-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-32: hsl(var(--opacity-blurple-32-hsl) / 0.3215686274509804);
+  --opacity-blurple-32-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-36: hsl(var(--opacity-blurple-36-hsl) / 0.3607843137254902);
+  --opacity-blurple-36-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-40: hsl(var(--opacity-blurple-40-hsl) / 0.4);
+  --opacity-blurple-40-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-44: hsl(var(--opacity-blurple-44-hsl) / 0.4392156862745098);
+  --opacity-blurple-44-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-48: hsl(
+    var(--opacity-blurple-48-hsl) / 0.47843137254901963
+  );
+  --opacity-blurple-48-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-52: hsl(var(--opacity-blurple-52-hsl) / 0.5215686274509804);
+  --opacity-blurple-52-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-56: hsl(var(--opacity-blurple-56-hsl) / 0.5607843137254902);
+  --opacity-blurple-56-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-60: hsl(var(--opacity-blurple-60-hsl) / 0.6);
+  --opacity-blurple-60-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-64: hsl(var(--opacity-blurple-64-hsl) / 0.6392156862745098);
+  --opacity-blurple-64-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-68: hsl(var(--opacity-blurple-68-hsl) / 0.6784313725490196);
+  --opacity-blurple-68-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-72: hsl(var(--opacity-blurple-72-hsl) / 0.7215686274509804);
+  --opacity-blurple-72-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-76: hsl(var(--opacity-blurple-76-hsl) / 0.7607843137254902);
+  --opacity-blurple-76-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-80: hsl(var(--opacity-blurple-80-hsl) / 0.8);
+  --opacity-blurple-80-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-84: hsl(var(--opacity-blurple-84-hsl) / 0.8392156862745098);
+  --opacity-blurple-84-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-88: hsl(var(--opacity-blurple-88-hsl) / 0.8784313725490196);
+  --opacity-blurple-88-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-92: hsl(var(--opacity-blurple-92-hsl) / 0.9215686274509803);
+  --opacity-blurple-92-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-blurple-96: hsl(var(--opacity-blurple-96-hsl) / 0.9607843137254902);
+  --opacity-blurple-96-hsl: 234.935 calc(var(--saturation-factor, 1) * 85.556%)
+    64.706%;
+  --opacity-green-1: hsl(var(--opacity-green-1-hsl) / 0.011764705882352941);
+  --opacity-green-1-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%) 26.275%;
+  --opacity-green-4: hsl(var(--opacity-green-4-hsl) / 0.0392156862745098);
+  --opacity-green-4-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%) 26.275%;
+  --opacity-green-8: hsl(var(--opacity-green-8-hsl) / 0.0784313725490196);
+  --opacity-green-8-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%) 26.275%;
+  --opacity-green-12: hsl(var(--opacity-green-12-hsl) / 0.12156862745098039);
+  --opacity-green-12-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-16: hsl(var(--opacity-green-16-hsl) / 0.1607843137254902);
+  --opacity-green-16-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-20: hsl(var(--opacity-green-20-hsl) / 0.2);
+  --opacity-green-20-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-24: hsl(var(--opacity-green-24-hsl) / 0.23921568627450981);
+  --opacity-green-24-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-28: hsl(var(--opacity-green-28-hsl) / 0.2784313725490196);
+  --opacity-green-28-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-32: hsl(var(--opacity-green-32-hsl) / 0.3215686274509804);
+  --opacity-green-32-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-36: hsl(var(--opacity-green-36-hsl) / 0.3607843137254902);
+  --opacity-green-36-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-40: hsl(var(--opacity-green-40-hsl) / 0.4);
+  --opacity-green-40-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-44: hsl(var(--opacity-green-44-hsl) / 0.4392156862745098);
+  --opacity-green-44-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-48: hsl(var(--opacity-green-48-hsl) / 0.47843137254901963);
+  --opacity-green-48-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-52: hsl(var(--opacity-green-52-hsl) / 0.5215686274509804);
+  --opacity-green-52-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-56: hsl(var(--opacity-green-56-hsl) / 0.5607843137254902);
+  --opacity-green-56-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-60: hsl(var(--opacity-green-60-hsl) / 0.6);
+  --opacity-green-60-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-64: hsl(var(--opacity-green-64-hsl) / 0.6392156862745098);
+  --opacity-green-64-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-68: hsl(var(--opacity-green-68-hsl) / 0.6784313725490196);
+  --opacity-green-68-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-72: hsl(var(--opacity-green-72-hsl) / 0.7215686274509804);
+  --opacity-green-72-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-76: hsl(var(--opacity-green-76-hsl) / 0.7607843137254902);
+  --opacity-green-76-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-80: hsl(var(--opacity-green-80-hsl) / 0.8);
+  --opacity-green-80-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-84: hsl(var(--opacity-green-84-hsl) / 0.8392156862745098);
+  --opacity-green-84-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-88: hsl(var(--opacity-green-88-hsl) / 0.8784313725490196);
+  --opacity-green-88-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-92: hsl(var(--opacity-green-92-hsl) / 0.9215686274509803);
+  --opacity-green-92-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-green-96: hsl(var(--opacity-green-96-hsl) / 0.9607843137254902);
+  --opacity-green-96-hsl: 145.97 calc(var(--saturation-factor, 1) * 100%)
+    26.275%;
+  --opacity-red-1: hsl(var(--opacity-red-1-hsl) / 0.011764705882352941);
+  --opacity-red-1-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-4: hsl(var(--opacity-red-4-hsl) / 0.0392156862745098);
+  --opacity-red-4-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-8: hsl(var(--opacity-red-8-hsl) / 0.0784313725490196);
+  --opacity-red-8-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-12: hsl(var(--opacity-red-12-hsl) / 0.12156862745098039);
+  --opacity-red-12-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-16: hsl(var(--opacity-red-16-hsl) / 0.1607843137254902);
+  --opacity-red-16-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-20: hsl(var(--opacity-red-20-hsl) / 0.2);
+  --opacity-red-20-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-24: hsl(var(--opacity-red-24-hsl) / 0.23921568627450981);
+  --opacity-red-24-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-28: hsl(var(--opacity-red-28-hsl) / 0.2784313725490196);
+  --opacity-red-28-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-32: hsl(var(--opacity-red-32-hsl) / 0.3215686274509804);
+  --opacity-red-32-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-36: hsl(var(--opacity-red-36-hsl) / 0.3607843137254902);
+  --opacity-red-36-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-40: hsl(var(--opacity-red-40-hsl) / 0.4);
+  --opacity-red-40-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-44: hsl(var(--opacity-red-44-hsl) / 0.4392156862745098);
+  --opacity-red-44-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-48: hsl(var(--opacity-red-48-hsl) / 0.47843137254901963);
+  --opacity-red-48-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-52: hsl(var(--opacity-red-52-hsl) / 0.5215686274509804);
+  --opacity-red-52-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-56: hsl(var(--opacity-red-56-hsl) / 0.5607843137254902);
+  --opacity-red-56-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-60: hsl(var(--opacity-red-60-hsl) / 0.6);
+  --opacity-red-60-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-64: hsl(var(--opacity-red-64-hsl) / 0.6392156862745098);
+  --opacity-red-64-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-68: hsl(var(--opacity-red-68-hsl) / 0.6784313725490196);
+  --opacity-red-68-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-72: hsl(var(--opacity-red-72-hsl) / 0.7215686274509804);
+  --opacity-red-72-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-76: hsl(var(--opacity-red-76-hsl) / 0.7607843137254902);
+  --opacity-red-76-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-80: hsl(var(--opacity-red-80-hsl) / 0.8);
+  --opacity-red-80-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-84: hsl(var(--opacity-red-84-hsl) / 0.8392156862745098);
+  --opacity-red-84-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-88: hsl(var(--opacity-red-88-hsl) / 0.8784313725490196);
+  --opacity-red-88-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-92: hsl(var(--opacity-red-92-hsl) / 0.9215686274509803);
+  --opacity-red-92-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-red-96: hsl(var(--opacity-red-96-hsl) / 0.9607843137254902);
+  --opacity-red-96-hsl: 355.636 calc(var(--saturation-factor, 1) * 64.706%) 50%;
+  --opacity-teal-1: hsl(var(--opacity-teal-1-hsl) / 0.011764705882352941);
+  --opacity-teal-1-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%) 27.059%;
+  --opacity-teal-4: hsl(var(--opacity-teal-4-hsl) / 0.0392156862745098);
+  --opacity-teal-4-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%) 27.059%;
+  --opacity-teal-8: hsl(var(--opacity-teal-8-hsl) / 0.0784313725490196);
+  --opacity-teal-8-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%) 27.059%;
+  --opacity-teal-12: hsl(var(--opacity-teal-12-hsl) / 0.12156862745098039);
+  --opacity-teal-12-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-16: hsl(var(--opacity-teal-16-hsl) / 0.1607843137254902);
+  --opacity-teal-16-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-20: hsl(var(--opacity-teal-20-hsl) / 0.2);
+  --opacity-teal-20-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-24: hsl(var(--opacity-teal-24-hsl) / 0.23921568627450981);
+  --opacity-teal-24-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-28: hsl(var(--opacity-teal-28-hsl) / 0.2784313725490196);
+  --opacity-teal-28-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-32: hsl(var(--opacity-teal-32-hsl) / 0.3215686274509804);
+  --opacity-teal-32-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-36: hsl(var(--opacity-teal-36-hsl) / 0.3607843137254902);
+  --opacity-teal-36-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-40: hsl(var(--opacity-teal-40-hsl) / 0.4);
+  --opacity-teal-40-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-44: hsl(var(--opacity-teal-44-hsl) / 0.4392156862745098);
+  --opacity-teal-44-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-48: hsl(var(--opacity-teal-48-hsl) / 0.47843137254901963);
+  --opacity-teal-48-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-52: hsl(var(--opacity-teal-52-hsl) / 0.5215686274509804);
+  --opacity-teal-52-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-56: hsl(var(--opacity-teal-56-hsl) / 0.5607843137254902);
+  --opacity-teal-56-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-60: hsl(var(--opacity-teal-60-hsl) / 0.6);
+  --opacity-teal-60-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-64: hsl(var(--opacity-teal-64-hsl) / 0.6392156862745098);
+  --opacity-teal-64-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-68: hsl(var(--opacity-teal-68-hsl) / 0.6784313725490196);
+  --opacity-teal-68-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-72: hsl(var(--opacity-teal-72-hsl) / 0.7215686274509804);
+  --opacity-teal-72-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-76: hsl(var(--opacity-teal-76-hsl) / 0.7607843137254902);
+  --opacity-teal-76-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-80: hsl(var(--opacity-teal-80-hsl) / 0.8);
+  --opacity-teal-80-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-84: hsl(var(--opacity-teal-84-hsl) / 0.8392156862745098);
+  --opacity-teal-84-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-88: hsl(var(--opacity-teal-88-hsl) / 0.8784313725490196);
+  --opacity-teal-88-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-92: hsl(var(--opacity-teal-92-hsl) / 0.9215686274509803);
+  --opacity-teal-92-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-teal-96: hsl(var(--opacity-teal-96-hsl) / 0.9607843137254902);
+  --opacity-teal-96-hsl: 183.913 calc(var(--saturation-factor, 1) * 100%)
+    27.059%;
+  --opacity-yellow-1: hsl(var(--opacity-yellow-1-hsl) / 0.011764705882352941);
+  --opacity-yellow-1-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-4: hsl(var(--opacity-yellow-4-hsl) / 0.0392156862745098);
+  --opacity-yellow-4-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-8: hsl(var(--opacity-yellow-8-hsl) / 0.0784313725490196);
+  --opacity-yellow-8-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-12: hsl(var(--opacity-yellow-12-hsl) / 0.12156862745098039);
+  --opacity-yellow-12-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-16: hsl(var(--opacity-yellow-16-hsl) / 0.1607843137254902);
+  --opacity-yellow-16-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-20: hsl(var(--opacity-yellow-20-hsl) / 0.2);
+  --opacity-yellow-20-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-24: hsl(var(--opacity-yellow-24-hsl) / 0.23921568627450981);
+  --opacity-yellow-24-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-28: hsl(var(--opacity-yellow-28-hsl) / 0.2784313725490196);
+  --opacity-yellow-28-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-32: hsl(var(--opacity-yellow-32-hsl) / 0.3215686274509804);
+  --opacity-yellow-32-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-36: hsl(var(--opacity-yellow-36-hsl) / 0.3607843137254902);
+  --opacity-yellow-36-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-40: hsl(var(--opacity-yellow-40-hsl) / 0.4);
+  --opacity-yellow-40-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-44: hsl(var(--opacity-yellow-44-hsl) / 0.4392156862745098);
+  --opacity-yellow-44-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-48: hsl(var(--opacity-yellow-48-hsl) / 0.47843137254901963);
+  --opacity-yellow-48-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-52: hsl(var(--opacity-yellow-52-hsl) / 0.5215686274509804);
+  --opacity-yellow-52-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-56: hsl(var(--opacity-yellow-56-hsl) / 0.5607843137254902);
+  --opacity-yellow-56-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-60: hsl(var(--opacity-yellow-60-hsl) / 0.6);
+  --opacity-yellow-60-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-64: hsl(var(--opacity-yellow-64-hsl) / 0.6392156862745098);
+  --opacity-yellow-64-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-68: hsl(var(--opacity-yellow-68-hsl) / 0.6784313725490196);
+  --opacity-yellow-68-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-72: hsl(var(--opacity-yellow-72-hsl) / 0.7215686274509804);
+  --opacity-yellow-72-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-76: hsl(var(--opacity-yellow-76-hsl) / 0.7607843137254902);
+  --opacity-yellow-76-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-80: hsl(var(--opacity-yellow-80-hsl) / 0.8);
+  --opacity-yellow-80-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-84: hsl(var(--opacity-yellow-84-hsl) / 0.8392156862745098);
+  --opacity-yellow-84-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-88: hsl(var(--opacity-yellow-88-hsl) / 0.8784313725490196);
+  --opacity-yellow-88-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-92: hsl(var(--opacity-yellow-92-hsl) / 0.9215686274509803);
+  --opacity-yellow-92-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-yellow-96: hsl(var(--opacity-yellow-96-hsl) / 0.9607843137254902);
+  --opacity-yellow-96-hsl: 36.894 calc(var(--saturation-factor, 1) * 100%)
+    31.569%;
+  --opacity-orange-1: hsl(var(--opacity-orange-1-hsl) / 0.011764705882352941);
+  --opacity-orange-1-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-4: hsl(var(--opacity-orange-4-hsl) / 0.0392156862745098);
+  --opacity-orange-4-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-8: hsl(var(--opacity-orange-8-hsl) / 0.0784313725490196);
+  --opacity-orange-8-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-12: hsl(var(--opacity-orange-12-hsl) / 0.12156862745098039);
+  --opacity-orange-12-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-16: hsl(var(--opacity-orange-16-hsl) / 0.1607843137254902);
+  --opacity-orange-16-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-20: hsl(var(--opacity-orange-20-hsl) / 0.2);
+  --opacity-orange-20-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-24: hsl(var(--opacity-orange-24-hsl) / 0.23921568627450981);
+  --opacity-orange-24-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-28: hsl(var(--opacity-orange-28-hsl) / 0.2784313725490196);
+  --opacity-orange-28-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-32: hsl(var(--opacity-orange-32-hsl) / 0.3215686274509804);
+  --opacity-orange-32-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-36: hsl(var(--opacity-orange-36-hsl) / 0.3607843137254902);
+  --opacity-orange-36-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-40: hsl(var(--opacity-orange-40-hsl) / 0.4);
+  --opacity-orange-40-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-44: hsl(var(--opacity-orange-44-hsl) / 0.4392156862745098);
+  --opacity-orange-44-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-48: hsl(var(--opacity-orange-48-hsl) / 0.47843137254901963);
+  --opacity-orange-48-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-52: hsl(var(--opacity-orange-52-hsl) / 0.5215686274509804);
+  --opacity-orange-52-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-56: hsl(var(--opacity-orange-56-hsl) / 0.5607843137254902);
+  --opacity-orange-56-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-60: hsl(var(--opacity-orange-60-hsl) / 0.6);
+  --opacity-orange-60-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-64: hsl(var(--opacity-orange-64-hsl) / 0.6392156862745098);
+  --opacity-orange-64-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-68: hsl(var(--opacity-orange-68-hsl) / 0.6784313725490196);
+  --opacity-orange-68-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-72: hsl(var(--opacity-orange-72-hsl) / 0.7215686274509804);
+  --opacity-orange-72-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-76: hsl(var(--opacity-orange-76-hsl) / 0.7607843137254902);
+  --opacity-orange-76-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-80: hsl(var(--opacity-orange-80-hsl) / 0.8);
+  --opacity-orange-80-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-84: hsl(var(--opacity-orange-84-hsl) / 0.8392156862745098);
+  --opacity-orange-84-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-88: hsl(var(--opacity-orange-88-hsl) / 0.8784313725490196);
+  --opacity-orange-88-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-92: hsl(var(--opacity-orange-92-hsl) / 0.9215686274509803);
+  --opacity-orange-92-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-orange-96: hsl(var(--opacity-orange-96-hsl) / 0.9607843137254902);
+  --opacity-orange-96-hsl: 25.079 calc(var(--saturation-factor, 1) * 100%)
+    37.059%;
+  --opacity-white-1: hsl(var(--opacity-white-1-hsl) / 0.011764705882352941);
+  --opacity-white-1-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-4: hsl(var(--opacity-white-4-hsl) / 0.0392156862745098);
+  --opacity-white-4-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-8: hsl(var(--opacity-white-8-hsl) / 0.0784313725490196);
+  --opacity-white-8-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-12: hsl(var(--opacity-white-12-hsl) / 0.12156862745098039);
+  --opacity-white-12-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-16: hsl(var(--opacity-white-16-hsl) / 0.1607843137254902);
+  --opacity-white-16-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-20: hsl(var(--opacity-white-20-hsl) / 0.2);
+  --opacity-white-20-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-24: hsl(var(--opacity-white-24-hsl) / 0.23921568627450981);
+  --opacity-white-24-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-28: hsl(var(--opacity-white-28-hsl) / 0.2784313725490196);
+  --opacity-white-28-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-32: hsl(var(--opacity-white-32-hsl) / 0.3215686274509804);
+  --opacity-white-32-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-36: hsl(var(--opacity-white-36-hsl) / 0.3607843137254902);
+  --opacity-white-36-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-40: hsl(var(--opacity-white-40-hsl) / 0.4);
+  --opacity-white-40-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-44: hsl(var(--opacity-white-44-hsl) / 0.4392156862745098);
+  --opacity-white-44-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-48: hsl(var(--opacity-white-48-hsl) / 0.47843137254901963);
+  --opacity-white-48-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-52: hsl(var(--opacity-white-52-hsl) / 0.5215686274509804);
+  --opacity-white-52-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-56: hsl(var(--opacity-white-56-hsl) / 0.5607843137254902);
+  --opacity-white-56-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-60: hsl(var(--opacity-white-60-hsl) / 0.6);
+  --opacity-white-60-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-64: hsl(var(--opacity-white-64-hsl) / 0.6392156862745098);
+  --opacity-white-64-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-68: hsl(var(--opacity-white-68-hsl) / 0.6784313725490196);
+  --opacity-white-68-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-72: hsl(var(--opacity-white-72-hsl) / 0.7215686274509804);
+  --opacity-white-72-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-76: hsl(var(--opacity-white-76-hsl) / 0.7607843137254902);
+  --opacity-white-76-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-80: hsl(var(--opacity-white-80-hsl) / 0.8);
+  --opacity-white-80-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-84: hsl(var(--opacity-white-84-hsl) / 0.8392156862745098);
+  --opacity-white-84-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-88: hsl(var(--opacity-white-88-hsl) / 0.8784313725490196);
+  --opacity-white-88-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-92: hsl(var(--opacity-white-92-hsl) / 0.9215686274509803);
+  --opacity-white-92-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-white-96: hsl(var(--opacity-white-96-hsl) / 0.9607843137254902);
+  --opacity-white-96-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 100%;
+  --opacity-black-1: hsl(var(--opacity-black-1-hsl) / 0.011764705882352941);
+  --opacity-black-1-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-4: hsl(var(--opacity-black-4-hsl) / 0.0392156862745098);
+  --opacity-black-4-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-8: hsl(var(--opacity-black-8-hsl) / 0.0784313725490196);
+  --opacity-black-8-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-12: hsl(var(--opacity-black-12-hsl) / 0.12156862745098039);
+  --opacity-black-12-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-16: hsl(var(--opacity-black-16-hsl) / 0.1607843137254902);
+  --opacity-black-16-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-20: hsl(var(--opacity-black-20-hsl) / 0.2);
+  --opacity-black-20-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-24: hsl(var(--opacity-black-24-hsl) / 0.23921568627450981);
+  --opacity-black-24-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-28: hsl(var(--opacity-black-28-hsl) / 0.2784313725490196);
+  --opacity-black-28-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-32: hsl(var(--opacity-black-32-hsl) / 0.3215686274509804);
+  --opacity-black-32-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-36: hsl(var(--opacity-black-36-hsl) / 0.3607843137254902);
+  --opacity-black-36-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-40: hsl(var(--opacity-black-40-hsl) / 0.4);
+  --opacity-black-40-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-44: hsl(var(--opacity-black-44-hsl) / 0.4392156862745098);
+  --opacity-black-44-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-48: hsl(var(--opacity-black-48-hsl) / 0.47843137254901963);
+  --opacity-black-48-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-52: hsl(var(--opacity-black-52-hsl) / 0.5215686274509804);
+  --opacity-black-52-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-56: hsl(var(--opacity-black-56-hsl) / 0.5607843137254902);
+  --opacity-black-56-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-60: hsl(var(--opacity-black-60-hsl) / 0.6);
+  --opacity-black-60-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-64: hsl(var(--opacity-black-64-hsl) / 0.6392156862745098);
+  --opacity-black-64-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-68: hsl(var(--opacity-black-68-hsl) / 0.6784313725490196);
+  --opacity-black-68-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-72: hsl(var(--opacity-black-72-hsl) / 0.7215686274509804);
+  --opacity-black-72-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-76: hsl(var(--opacity-black-76-hsl) / 0.7607843137254902);
+  --opacity-black-76-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-80: hsl(var(--opacity-black-80-hsl) / 0.8);
+  --opacity-black-80-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-84: hsl(var(--opacity-black-84-hsl) / 0.8392156862745098);
+  --opacity-black-84-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-88: hsl(var(--opacity-black-88-hsl) / 0.8784313725490196);
+  --opacity-black-88-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-92: hsl(var(--opacity-black-92-hsl) / 0.9215686274509803);
+  --opacity-black-92-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+  --opacity-black-96: hsl(var(--opacity-black-96-hsl) / 0.9607843137254902);
+  --opacity-black-96-hsl: 0 calc(var(--saturation-factor, 1) * 0%) 0%;
+}
