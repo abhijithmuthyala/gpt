@@ -37,7 +37,7 @@ export default function ChatLink({
     content = (
       <Accordian
         title={
-          <Link href={`/${id}`} className="pr-10">
+          <Link href={`/${id}`} className="p-3 pr-10">
             {title}
           </Link>
         }
@@ -60,7 +60,7 @@ export default function ChatLink({
 
   return (
     <div
-      className={`hover:bg-slate-100 focus-within:bg-slate-100 p-2 rounded-md ${isCurrentChat ? "bg-slate-200 focus-within:bg-slate-200 hover:bg-slate-200" : "bg-zinc-50"} ${
+      className={`hover:bg-slate-100 focus-within:bg-slate-100 rounded-md ${isCurrentChat ? "bg-slate-200 focus-within:bg-slate-200 hover:bg-slate-200" : "bg-zinc-50"} ${
         actionIsPending ? "opacity-50 pointer-events-none animate-pulse" : ""
       }`}
     >

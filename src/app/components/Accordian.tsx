@@ -34,7 +34,7 @@ export default function Accordian({
         <Button
           variant={"secondary"}
           onClick={toggleAccordian}
-          className="col-start-2 row-start-1"
+          className="col-start-2 row-start-1 sticky right-3"
         >
           {expanded ? toggleOpened : toggleClosed}
         </Button>
