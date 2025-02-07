@@ -9,7 +9,7 @@ export default function NewChatButton() {
   return (
     <Button
       type="submit"
-      className={`${pending ? "animate-pulse" : ""} bg-lime-600 hover:bg-lime-700 scale-125`}
+      className={`${pending ? "animate-pulse" : ""} bg-lime-600 hover:bg-lime-700`}
     >
       {pending ? "Starting a new chat..." : "Start New Chat"}
     </Button>

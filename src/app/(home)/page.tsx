@@ -13,7 +13,9 @@ export default function HomePage() {
           create, analyze and learn - all in one place.
         </p>
       </div>
-      <NewChat />
+      <div className="scale-125">
+        <NewChat />
+      </div>
     </main>
   );
 }
