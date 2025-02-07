@@ -62,7 +62,7 @@ export async function signup(
     return { errors: sanityErrors.error.flatten(), success: false, data };
   }
 
-  const { error } = await supabase.auth.signInWithPassword(data);
+  const { error } = await supabase.auth.signUp(data);
   if (error) {
     return { errors: { formErrors: [error.message] }, success: false, data };
   }
