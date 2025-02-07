@@ -3,6 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import { useToast } from "@/hooks/use-toast";
 import { setStateInViewTransition } from "@/utils/client";
 import { useActionState, useState } from "react";
 import { login, signup } from "../actions/auth";
@@ -24,13 +25,22 @@ export default function AuthForm() {
     handleSubmit,
     initFormState,
   );
+  const { toast } = useToast();
 
   async function handleSubmit(formState: FormState, formData: FormData) {
     if (isPending) return formState;
+
     if (type === "login") {
       return await login(formState, formData);
     } else {
-      return await signup(formState, formData);
+      await signup(formState, formData);
+      toast({
+        title: "Account created",
+        description:
+          "Please login again with the verification link sent to your email.",
+        variant: "default",
+      });
+      return formState;
     }
   }
 

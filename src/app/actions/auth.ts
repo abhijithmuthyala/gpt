@@ -47,10 +47,7 @@ export async function login(
   redirect("/");
 }
 
-export async function signup(
-  formState: FormState,
-  formData: FormData,
-): Promise<FormState> {
+export async function signup(formState: FormState, formData: FormData) {
   const supabase = await createClient();
   const data = {
     email: formData.get("email") as string,
@@ -66,8 +63,6 @@ export async function signup(
   if (error) {
     return { errors: { formErrors: [error.message] }, success: false, data };
   }
-
-  redirect("/");
 }
 
 export async function signout() {

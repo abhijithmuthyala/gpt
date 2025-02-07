@@ -1,3 +1,4 @@
+import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 import "./globals.css";
 
@@ -28,6 +29,7 @@ export default function RootLayout({
     <html lang="en" className="overflow-x-hidden">
       <body className="font-normal text-primary max-w-7xl mx-auto">
         {children}
+        <Toaster />
       </body>
     </html>
   );
