@@ -28,7 +28,7 @@ export function useDocumentOverflowEffect(overlayState: boolean) {
       document.documentElement.style.overflowY = "hidden";
 
       return function () {
-        document.documentElement.style.overflowY = "auto";
+        document.documentElement.style.overflowY = "scroll";
       };
     },
     [overlayState],

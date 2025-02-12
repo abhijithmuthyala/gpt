@@ -53,7 +53,7 @@ export default function ChatTitleForm({
         name="title"
         ref={(node) => node?.focus()}
       />
-      <div className="flex gap-x-2 gap-y-1 items-center flex-wrap">
+      <div className="flex gap-x-2 gap-y-1 p-2 items-center flex-wrap">
         <Button
           variant={"default"}
           className="bg-lime-600 hover:bg-opacity-75"

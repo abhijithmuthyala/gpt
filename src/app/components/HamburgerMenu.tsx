@@ -30,8 +30,17 @@ export default function HamburgerMenu({
     return toggleButton;
   }
 
+  function handleCloseMenuOnChatLinkClick(e: React.MouseEvent<HTMLElement>) {
+    if ((e.target as HTMLElement).closest("a")) {
+      toggle();
+    }
+  }
+
   return (
-    <div className="fixed overflow-y-scroll px-4 py-3 top-0 left-0 h-screen w-screen overflow-x-hidden z-50 bg-zinc-50 flex flex-col gap-y-12">
+    <div
+      className="fixed overflow-y-scroll px-4 py-3 top-0 left-0 h-screen w-screen overflow-x-hidden z-50 bg-zinc-50 flex flex-col gap-y-12"
+      onClick={handleCloseMenuOnChatLinkClick}
+    >
       <div className="sticky grid justify-end top-0 backdrop-blur-sm">
         {toggleButton}
       </div>

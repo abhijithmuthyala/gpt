@@ -4,7 +4,7 @@ import { v4 as uuid } from "uuid";
 export function ChatActionsMenu({ children }: { children: React.ReactNode }) {
   return (
     <ul
-      className="flex flex-wrap gap-x-2 gap-y-1 items-center"
+      className="flex flex-wrap gap-x-2 p-2 gap-y-1 items-center"
       style={{ viewTransitionName: "actions-menu" + uuid() }}
     >
       {Children.map(children, function renderActionItem(chatActionElement, i) {
