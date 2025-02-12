@@ -11,20 +11,20 @@ export default function Loading() {
             fy=".3125"
             gradientTransform="scale(1.5)"
           >
-            <stop offset="0" stop-color="#FF156D"></stop>
-            <stop offset=".3" stop-color="#FF156D" stop-opacity=".9"></stop>
-            <stop offset=".6" stop-color="#FF156D" stop-opacity=".6"></stop>
-            <stop offset=".8" stop-color="#FF156D" stop-opacity=".3"></stop>
-            <stop offset="1" stop-color="#FF156D" stop-opacity="0"></stop>
+            <stop offset="0" stopColor="#FF156D"></stop>
+            <stop offset=".3" stopColor="#FF156D" stopOpacity=".9"></stop>
+            <stop offset=".6" stopColor="#FF156D" stopOpacity=".6"></stop>
+            <stop offset=".8" stopColor="#FF156D" stopOpacity=".3"></stop>
+            <stop offset="1" stopColor="#FF156D" stopOpacity="0"></stop>
           </radialGradient>
           <circle
             transform-origin="center"
             fill="none"
             stroke="url(#a12)"
-            stroke-width="15"
-            stroke-linecap="round"
-            stroke-dasharray="200 1000"
-            stroke-dashoffset="0"
+            strokeWidth="15"
+            strokeLinecap="round"
+            strokeDasharray="200 1000"
+            strokeDashoffset="0"
             cx="100"
             cy="100"
             r="70"
@@ -45,8 +45,8 @@ export default function Loading() {
             fill="none"
             opacity=".2"
             stroke="#FF156D"
-            stroke-width="15"
-            stroke-linecap="round"
+            strokeWidth="15"
+            strokeLinecap="round"
             cx="100"
             cy="100"
             r="70"

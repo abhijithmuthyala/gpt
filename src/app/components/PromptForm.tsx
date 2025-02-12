@@ -44,9 +44,7 @@ export default function PromptForm({
     ]);
 
     if (!error) {
-      queueMicrotask(function updatePrompts() {
-        onPrompt(response as string, "model");
-      });
+      onPrompt(response as string, "model");
     }
 
     return { response, error };
